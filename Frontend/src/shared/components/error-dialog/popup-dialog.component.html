@@ -1,0 +1,19 @@
+<!--<div class="dialog">-->
+<!--  <h1>{{title}}</h1>-->
+<!--  <p>{{body}}</p>-->
+<!--  <button (click)="destory()">ok</button>-->
+<!--</div>-->
+
+
+<div class="popup popup--icon popup--visible" [ngClass]="{ '-success': (type == SUCCESS), '-question': (type == WARN), '-error': (type == ERROR) }">
+  <div class="popup__background"></div>
+  <div class="popup__content">
+    <h3 class="popup__content__title">
+      {{title}}
+    </h3>
+    <p>{{body}}</p>
+    <p>
+      <button class="button" [ngClass]="{ 'button--success': (type == SUCCESS), 'button--warning': (type == WARN), 'button--error': (type == ERROR) }" (click)="destory()">CLOSE</button>
+    </p>
+  </div>
+</div>

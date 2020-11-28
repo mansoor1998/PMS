@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200809133936_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809133936_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809134857_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809134857_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809141212_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809141212_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809141414_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809141414_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809141549_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809141549_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809143052_InitialDbCreation.cs" />
+    <Compile Remove="Migrations\20200809143052_InitialDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20200809183243_Update-DeleteBehaviour-Cascade.cs" />
+    <Compile Remove="Migrations\20200809183243_Update-DeleteBehaviour-Cascade.Designer.cs" />
+    <Compile Remove="Migrations\20200809183457_Update-DeleteBehaviour-Cascade.cs" />
+    <Compile Remove="Migrations\20200809183457_Update-DeleteBehaviour-Cascade.Designer.cs" />
+    <Compile Remove="Migrations\20200809184125_Update-DeleteBehaviour-Cascade.cs" />
+    <Compile Remove="Migrations\20200809184125_Update-DeleteBehaviour-Cascade.Designer.cs" />
+    <Compile Remove="Migrations\20200809184311_Update-DeleteBehaviour-Cascade.cs" />
+    <Compile Remove="Migrations\20200809184311_Update-DeleteBehaviour-Cascade.Designer.cs" />
+    <Compile Remove="Migrations\20200809184842_InitialDbMigration.cs" />
+    <Compile Remove="Migrations\20200809184842_InitialDbMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<div class="form-item">
+  <div class="custom-input theme-m size-large">
+    <div class="input-wrap align-icon-left has-icon">
+      <!--Content will be projected here-->
+      <ng-content select="input"></ng-content>
+      <ng-content  select="mat-icon"></ng-content>
+      <!--      <ng-content></ng-content>-->
+      <!--      <ng-template #errorMessage></ng-template>-->
+    </div>
+  </div>
+  <ng-content select="span" #inputError></ng-content>
+<!--  <ng-container select="span" [ngTemplateOutlet]="getErrorMessage"></ng-container>-->
+</div>
+
