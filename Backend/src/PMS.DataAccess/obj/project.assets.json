@@ -6198,11 +6198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
+      "projectUniqueName": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
       "projectName": "PMS.DataAccess",
-      "projectPath": "E:\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
+      "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\obj\\",
+      "outputPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

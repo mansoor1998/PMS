@@ -6,9 +6,8 @@ using System.Text;
 
 namespace PMS.DataAccess.Models
 {
-    public class Medicine : IEntity
+    public class Medicine : CustomEntity, IEntity
     {
-        public long Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -25,7 +24,5 @@ namespace PMS.DataAccess.Models
         [ForeignKey("UserId")]
         public User user { get; set; }
         public List<Cart> Carts { get; set; } = new List<Cart>();
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
     }
 }

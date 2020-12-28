@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PMS.DataAccess.Models;
 using PMS.Dto.Medicine;
+using PMS.Repository;
 using PMS.Repository.MedicineRepo;
 
 namespace PMS.Controllers
@@ -17,9 +18,13 @@ namespace PMS.Controllers
     public class MedicineController : ControllerBase
     {
         IMedicineRepository _repository;
-        public MedicineController(IMedicineRepository repository)
+        IRepository<Medicine> _generic;
+        IRepository<MedicalCompany> _medicalCompany;
+        public MedicineController(IMedicineRepository repository, IRepository<Medicine> generic, IRepository<MedicalCompany> medicalCompany)
         {
             _repository = repository;
+            _generic = generic;
+            _medicalCompany = medicalCompany;
         }
 
         [HttpPost]
@@ -42,6 +47,9 @@ namespace PMS.Controllers
                 medicinesDto.Add(medicineRef);
                 Utility.Copier<Medicine, CreateMedicineDto>.Copy(medicines[i], medicineRef);
             }
+
+            _generic.GetAll();
+
             return medicinesDto;
         }
 

@@ -5749,11 +5749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
+      "projectUniqueName": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
       "projectName": "PMS",
-      "projectPath": "E:\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
+      "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\PMS\\Backend\\src\\PMS\\obj\\",
+      "outputPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5774,8 +5774,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
-              "projectPath": "E:\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj"
+            "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
+              "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj"
             }
           }
         }

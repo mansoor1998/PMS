@@ -6,9 +6,8 @@ using System.Text;
 
 namespace PMS.DataAccess.Models
 {
-    public class User : IEntity
+    public class User : CustomEntity, IEntity
     {
-        public long Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -21,7 +20,5 @@ namespace PMS.DataAccess.Models
         public long RoleId { get; set; }
         [ForeignKey("RoleId")]
         public Role Role { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
     }
 }

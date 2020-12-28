@@ -25,3 +25,12 @@ E:\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAcce
 E:\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csproj.CoreCompileInputs.cache
 E:\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.dll
 E:\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.pdb
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.deps.json
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.pdb
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csprojAssemblyReference.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.AssemblyInfoInputs.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.AssemblyInfo.cs
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csproj.CoreCompileInputs.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.pdb

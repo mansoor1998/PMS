@@ -6,9 +6,8 @@ using System.Text;
 
 namespace PMS.DataAccess.Models
 {
-    public class MedicalCompany : IEntity
+    public class MedicalCompany : CustomEntity, IEntity
     {
-        public long Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
@@ -16,7 +15,5 @@ namespace PMS.DataAccess.Models
         public long UserId { get; set; }
         [ForeignKey("UserId")]
         public User user { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Updated { get; set; }
     }
 }

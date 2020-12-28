@@ -13,6 +13,7 @@ namespace PMS.DataAccess.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            #region Fluent API
             // User Model Config
             modelBuilder.Entity<User>()
                .HasIndex(u => u.Username)
@@ -31,9 +32,12 @@ namespace PMS.DataAccess.DataAccess
                 .WithMany(o => o.Carts)
                 .HasForeignKey(c => c.MedicineId)
                 .OnDelete(DeleteBehavior.Restrict);
+            #endregion
 
+            modelBuilder.Entity<Medicine>().HasQueryFilter(d => d.IsDeleted == false);
         }
 
+        #region Models
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
@@ -41,6 +45,7 @@ namespace PMS.DataAccess.DataAccess
         public DbSet<Order> Orders { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
+        #endregion
 
     }
 }

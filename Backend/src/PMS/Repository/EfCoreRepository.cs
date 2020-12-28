@@ -28,9 +28,21 @@ namespace PMS.Repository
             return entity.Id;
         }
 
-        public List<TEntity> GetAll()
+        /*
+         * Get All Entites with Pagination.
+         * SkipCount , MaxResultcount are optional parameters.
+         * If SkipCount is defined it will skip the data in result.
+         * MaxResult selects the amount of data needed to be selected.
+         */
+        public List<TEntity> GetAll(int? SkipCount = null, int? MaxResultCount = null)
         {
-            return _context.Set<TEntity>().ToList();
+            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>();
+            EntityQuery = (SkipCount != null) ? EntityQuery.Skip((int) SkipCount) : EntityQuery;
+
+            if (MaxResultCount <= 0) throw new InvalidOperationException(MaxResultCount.GetType().Name + " cannot be less than or equal to 0");
+
+            EntityQuery = (MaxResultCount != null) ? EntityQuery.Take((int)MaxResultCount) : EntityQuery;
+            return EntityQuery.ToList();
         }
 
         public TEntity GetById(long Id)
@@ -56,6 +68,22 @@ namespace PMS.Repository
             TEntity entity = (TEntity) Activator.CreateInstance( typeof(TEntity), new object { } );
             entity.Id = id;
             _context.Set<TEntity>().Remove(entity);
+            _context.SaveChanges();
+        }
+
+        /*
+         * Attach the object to database and Set IsDelted to True
+         */
+        public void SoftDelete(long Id)
+        {
+            TEntity entity = (TEntity)Activator.CreateInstance(typeof(TEntity), new object[] { });
+
+            entity.IsDeleted = true;
+            entity.Id = Id;
+
+            var entityContext = _context.Set<TEntity>();
+            entityContext.Attach(entity);
+            _context.Entry(entity).Property(x => x.IsDeleted).IsModified = true;
             _context.SaveChanges();
         }
     }   

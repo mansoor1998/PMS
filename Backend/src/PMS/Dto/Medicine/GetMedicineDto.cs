@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace PMS.Dto.Medicine
 {
-    public class CreateMedicineDto
+    public class GetMedicineDto
     {
-        public long Id { get; set; }
         public string Name { get; set; }
         public string BatchCode { get; set; }
         public DateTime MGFDate { get; set; }

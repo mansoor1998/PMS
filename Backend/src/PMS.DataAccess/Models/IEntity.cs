@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace PMS.DataAccess.Models
@@ -9,5 +10,6 @@ namespace PMS.DataAccess.Models
         long Id {get; set;}
         DateTime Created { get; set; }
         DateTime Updated { get; set; }
+        bool IsDeleted { get; set; }
     }
 }

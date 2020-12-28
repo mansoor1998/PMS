@@ -15,6 +15,9 @@ using PMS.Repository.OrderRepo;
 using PMS.Repository.CartRepo;
 using PMS.Repository.InvoiceRepo;
 using PMS.Repository;
+using PMS.DataAccess.Models;
+using System.Collections.Generic;
+using PMS.Repository.CustomRepo;
 
 namespace PMS
 {
@@ -73,7 +76,9 @@ namespace PMS
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped<IInvoiceRepository, InvoiceRepository>();
-            services.AddScoped<TestAbstract, Test>();
+            services.AddScoped(typeof( IRepository<> ), typeof (CustomRepository<>));
+            services.AddScoped<TestAbstract, Test>(); 
+
             // enable routing API
             services.AddControllers();
             
