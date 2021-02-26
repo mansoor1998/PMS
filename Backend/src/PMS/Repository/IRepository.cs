@@ -4,7 +4,7 @@ using System.Security.Policy;
 
 namespace PMS.Repository
 {
-    public interface IRepository<T> //where T : class, IEntity
+    public interface IRepository<T> where T : class, IEntity
     {
         public long Create(T entity);
         public List<T> GetAll(int? SkipCount = null, int? MaxResultCount = null);

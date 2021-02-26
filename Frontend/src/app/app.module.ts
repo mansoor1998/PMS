@@ -10,6 +10,7 @@ import {ShareModule} from '../shared/share.module';
 import { HomeComponent } from './home/home.component';
 import { AppSidebarNavComponent } from './layout/app-sidebar-nav/app-sidebar-nav.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -25,7 +26,8 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule,
     AppRoutingModule,
     ShareModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule
   ],
   providers: []
 })
