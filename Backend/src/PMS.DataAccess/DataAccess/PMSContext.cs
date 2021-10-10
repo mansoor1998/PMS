@@ -34,11 +34,7 @@ namespace PMS.DataAccess.DataAccess
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
 
-
-            modelBuilder.SetQueryFilterOnAllEntities<IEntity>(p => !p.IsDeleted);
-            //modelBuilder.Entity<IEntity>().HasQueryFilter(d => d.IsDeleted == false);
-            //modelBuilder.SetQueryFilter<Post, ISoftDeletable>(p => p.IsDeleted);
-
+            modelBuilder.Entity<Medicine>().HasQueryFilter(d => d.IsDeleted == false);
         }
 
         #region Models

@@ -1,36 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj": {}
+    "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS\\PMS.csproj": {}
   },
   "projects": {
-    "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
+    "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
+        "projectUniqueName": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
         "projectName": "PMS.DataAccess",
-        "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\obj\\",
+        "projectPath": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Mansoor\\.nuget\\packages\\",
+        "outputPath": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\Mansoor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -42,6 +38,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -52,6 +49,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.18, )"
             }
           },
           "imports": [
@@ -64,40 +65,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj": {
+    "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS\\PMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
+        "projectUniqueName": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS\\PMS.csproj",
         "projectName": "PMS",
-        "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\PMS.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS\\obj\\",
+        "projectPath": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS\\PMS.csproj",
+        "packagesPath": "C:\\Users\\Mansoor\\.nuget\\packages\\",
+        "outputPath": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\Mansoor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
-                "projectPath": "D:\\Disk E\\Projects\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj"
+              "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj": {
+                "projectPath": "D:\\Volume B\\Projects\\Frontend\\PMS\\Backend\\src\\PMS.DataAccess\\PMS.DataAccess.csproj"
               }
             }
           }
@@ -110,6 +107,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -120,6 +118,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.18, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -144,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

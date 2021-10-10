@@ -34,3 +34,13 @@ D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.D
 D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csproj.CoreCompileInputs.cache
 D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.dll
 D:\Disk E\Projects\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.deps.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\bin\Debug\netstandard2.0\PMS.DataAccess.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.AssemblyInfoInputs.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.AssemblyInfo.cs
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csproj.CoreCompileInputs.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS.DataAccess\obj\Debug\netstandard2.0\PMS.DataAccess.csproj.AssemblyReference.cache

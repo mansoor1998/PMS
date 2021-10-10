@@ -27,10 +27,13 @@
     <Compile Remove="Migrations\20200809184311_Update-DeleteBehaviour-Cascade.Designer.cs" />
     <Compile Remove="Migrations\20200809184842_InitialDbMigration.cs" />
     <Compile Remove="Migrations\20200809184842_InitialDbMigration.Designer.cs" />
+    <Compile Remove="Migrations\20211010145741_inital migratoin.cs" />
+    <Compile Remove="Migrations\20211010145741_inital migratoin.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.18" />
   </ItemGroup>
 
 </Project>
