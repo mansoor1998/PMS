@@ -76,15 +76,16 @@ namespace PMS.Repository
          */
         public void SoftDelete(long Id)
         {
+            throw new Exception();
             TEntity entity = (TEntity)Activator.CreateInstance(typeof(TEntity), new object[] { });
 
-            entity.IsDeleted = true;
-            entity.Id = Id;
+            //entity.IsDeleted = true;
+            //entity.Id = Id;
 
-            var entityContext = _context.Set<TEntity>();
-            entityContext.Attach(entity);
-            _context.Entry(entity).Property(x => x.IsDeleted).IsModified = true;
-            _context.SaveChanges();
+            //var entityContext = _context.Set<TEntity>();
+            //entityContext.Attach(entity);
+            //_context.Entry(entity).Property(x => x.IsDeleted).IsModified = true;
+            //_context.SaveChanges();
         }
     }   
 }

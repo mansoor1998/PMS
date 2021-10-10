@@ -44,7 +44,7 @@ namespace PMS
             // Context for Db Access
             services.AddDbContext<PMSContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                options.UseNpgsql(Configuration.GetConnectionString("Default"));
             });
 
 
