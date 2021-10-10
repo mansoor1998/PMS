@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PMS.DataAccess.DataAccess;
 using PMS.DataAccess.Models;
 using PMS.Dto.MedicineCompany;
 using PMS.Repository.MedicalCompanyRepo;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace PMS.Controllers
 {
@@ -15,9 +18,12 @@ namespace PMS.Controllers
     public class CompanyController : ControllerBase
     {
         IMedicalCompanyRepository _repository;
-        public CompanyController(IMedicalCompanyRepository repository)
+        private PMSContext _context;
+
+        public CompanyController(IMedicalCompanyRepository repository, PMSContext context)
         {
             _repository = repository;
+            _context = context;
         }
 
         [HttpPost]
@@ -70,6 +76,30 @@ namespace PMS.Controllers
             {
 
             }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("test")]
+        public string RandomFunction()
+        {
+
+            Response.OnCompleted(ContextCall);
+
+
+            return "This has been returned";
+
+        }
+
+        private async Task ContextCall()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                var a = new MedicalCompany();
+                a.Name = "random";
+                a.UserId = 3;
+                _context.MedicalCompanies.Add(a);
+            }
+            _context.SaveChanges();
         }
     }
 }

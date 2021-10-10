@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PMS.DataAccess.Models;
 using PMS.Dto.Cart;
@@ -15,7 +16,7 @@ using System.Security.Claims;
 
 namespace PMS.Controllers
 {
-    //[Authorize(Roles = "Pharmasit")]
+    [Authorize(Roles = "Pharmasit")]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
