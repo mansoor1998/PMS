@@ -1,0 +1,25 @@
+<div class="user-info">
+  <div>
+    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+    <p>admin@pms.com</p>
+    <p>John D.</p>
+  </div>
+  <!--  <div class="icon">-->
+  <!--    <mat-icon matRipple [matRippleColor]="'#FFFFFF50'">keyboard_arrow_down</mat-icon>-->
+  <!--    <ul class="pms-dropdown-menu">-->
+  <!--      <li matRipple [matRippleColor]="'#FFFFFF50'"><a><i class="material-icons">lock</i><span>Update Password</span></a></li>-->
+  <!--      <li matRipple [matRippleColor]="'#FFFFFF50'"><a><i class="material-icons">input</i><span>{{ 'Logout' }}</span></a></li>-->
+  <!--    </ul>-->
+  <!--  </div>-->
+
+  <div class="menu">
+    <app-dropdown-menu>
+      <i matRipple [matRippleColor]="'#FFFFFF50'" #icon class="material-icons">keyboard_arrow_down</i>
+      <ul #menu>
+        <li matRipple [matRippleColor]="'#FFFFFF50'"><a><i class="material-icons">lock</i><span>Update Password</span></a></li>
+        <li matRipple [matRippleColor]="'#FFFFFF50'" (click)="logout($event)"><a><i class="material-icons">input</i><span>{{ 'Logout' }}</span></a></li>
+      </ul>
+    </app-dropdown-menu>
+  </div>
+
+</div>

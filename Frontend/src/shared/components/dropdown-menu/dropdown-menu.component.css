@@ -1,0 +1,85 @@
+.dropdown{
+  overflow: visible;
+  color: white;
+  cursor: pointer;
+}
+
+:host ::ng-deep .dropdown  i{
+  border-radius: 50%;
+}
+
+
+:host ::ng-deep .dropdown ul{
+  margin: 0px;
+  padding: 0px;
+  /* display: none; */
+  position: absolute;
+  background-color: black;
+  width: 200px;
+  top: 26px;
+  left: 5px;
+  z-index: 100000;
+}
+
+:host ::ng-deep .dropdown ul li{
+  list-style: none;
+  padding: 10px;
+  overflow: hidden;
+  /*border-radius: 50%;*/
+}
+
+:host ::ng-deep .dropdown ul li i{
+  position: relative;
+  top: 5px;
+}
+
+:host ::ng-deep .dropdown ul li span{
+  margin-left: 5px;
+}
+
+:host ::ng-deep .show{
+  transition: all 0.3s ease-in-out;
+  animation-name: toggle-dropdown;
+  animation-duration: 0.5s;
+  max-height: 1000px;
+}
+
+
+:host ::ng-deep .hide{
+  /*display: none !important;*/
+  /*height: 0;*/
+  /*overflow: hidden;*/
+  /*animation-delay: 0.5s;*/
+  transition: 0.5s;
+  visibility: hidden;
+  animation: toggle-down;
+  animation-duration: 0.5s;
+}
+
+@keyframes toggle-down {
+  from{
+    opacity: 1;
+    margin-top: 0px;
+  }
+  to{
+    opacity: 0;
+    margin-top: 25px;
+  }
+}
+
+@keyframes toggle-dropdown {
+  from{
+    /*max-width: 0px;*/
+    /*height: 0px;*/
+    /*height: 0px;*/
+    opacity: 0;
+    margin-top: 25px;
+  }
+  to{
+    /*max-width: 200px;*/
+    /*height: fit-content;*/
+    /*max-height : 1000px;*/
+    opacity: 1;
+    margin-top: 0px;
+  }
+}

@@ -1,0 +1,39 @@
+.user-info{
+  height: var(--user-area-height);
+  color: white;
+  padding: 20px;
+  position: relative;
+  font-family: BalsamiqSans;
+}
+
+.user-info .icon{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  overflow: visible;
+  color: white;
+  cursor: pointer;
+}
+
+.user-info .menu{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+:host ::ng-deep .user-info .icon  mat-icon{
+  border-radius: 50%;
+}
+
+
+.user-info div img{
+  /*margin: 10px;*/
+  height: 105px;
+  width: 105px;
+  border-radius: 50%;
+}
+
+.user-info div p{
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}

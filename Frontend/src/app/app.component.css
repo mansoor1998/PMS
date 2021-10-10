@@ -1,0 +1,26 @@
+#left-sidebar{
+  position: fixed;
+  height: calc(100% - var(--toolbar-height));
+  width: var(--sidebar-width);
+  z-index: 10000;
+  background-color: #19222a;
+  top: var(--toolbar-height);
+  transition: .5s;
+  font-family: BalsamiqSans !important;
+}
+
+#content {
+  transition: .5s;
+  margin: calc(var(--toolbar-height) + 40px) 15px 0 calc(var(--sidebar-width) + 15px);
+  font-family: BalsamiqSans !important;
+}
+
+
+@media screen and (max-width: 1000px){
+  #content{
+    margin-left: 0px !important;
+  }
+  #left-sidebar{
+    margin-left: calc(var(--sidebar-width) * -1);
+  }
+}
