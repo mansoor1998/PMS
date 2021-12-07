@@ -21,8 +21,9 @@ namespace PMS.Controllers
         [HttpGet]
         public virtual List<TEntityGetDto> GetAll([FromQuery(Name = "SkipCount")] int? SkipCount, [FromQuery(Name = "MaxResultCount")] int? MaxResultCount)
         {
-            var result = _repository.GetAll(SkipCount, MaxResultCount);
+            var resultAsync = _repository.GetAll(SkipCount, MaxResultCount);
             List<TEntityGetDto> DtoResult = new List<TEntityGetDto>();
+            var result = resultAsync.ArrayList;
             for (int i = 0; i < result.Count; i++)
             {
                 TEntityGetDto copier = (TEntityGetDto)Activator.CreateInstance(typeof(TEntityGetDto), new object[] { });

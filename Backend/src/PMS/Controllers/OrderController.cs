@@ -47,7 +47,7 @@ namespace PMS.Controllers
             }
             else
             {
-                orderId = order.Id;
+                orderId = (long)order.Id;
             }
             Medicine medicine =_medicineRepository.GetById(product.MedicineId);
             double diff = medicine.Quantity - product.Quantity;
@@ -56,7 +56,7 @@ namespace PMS.Controllers
                 Cart cart = new Cart();
                 Utility.Copier<CreateCartDto, Cart>.Copy(product, cart);
                 cart.OrderId = orderId;
-                cart.MedicineId = medicine.Id;
+                cart.MedicineId = (long)medicine.Id;
                 cart.Quantity = product.Quantity;
                 _cartRepossitory.Create(cart);
                 medicine.Quantity = diff;
@@ -93,7 +93,7 @@ namespace PMS.Controllers
             order.FinalizedDate = DateTime.Now;
             _orderRepository.Update(order);
             // An invoice should be created
-            long orderId = order.Id;
+            long orderId = (long)order.Id;
             Invoice invoice = new Invoice();
             invoice.InvoiceNo = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12).Select(s => s[(new Random()).Next(s.Length)]).ToArray());
             invoice.OrderId = orderId;

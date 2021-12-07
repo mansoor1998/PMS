@@ -1,17 +1,16 @@
-.dropdown{
+.dropdown-custom{
   overflow: visible;
   color: white;
   cursor: pointer;
 }
 
-:host ::ng-deep .dropdown  i{
+:host ::ng-deep .dropdown-custom  i{
   border-radius: 50%;
+  user-select: none;
 }
 
 
-:host ::ng-deep .dropdown ul{
-  margin: 0px;
-  padding: 0px;
+:host ::ng-deep .dropdown-custom div{
   /* display: none; */
   position: absolute;
   background-color: black;
@@ -21,19 +20,25 @@
   z-index: 100000;
 }
 
-:host ::ng-deep .dropdown ul li{
+:host ::ng-deep .dropdown-custom div ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+:host ::ng-deep .dropdown-custom ul li{
   list-style: none;
   padding: 10px;
   overflow: hidden;
+  /* color: white; */
   /*border-radius: 50%;*/
 }
 
-:host ::ng-deep .dropdown ul li i{
+:host ::ng-deep .dropdown-custom ul li i{
   position: relative;
   top: 5px;
 }
 
-:host ::ng-deep .dropdown ul li span{
+:host ::ng-deep .dropdown-custom ul li span{
   margin-left: 5px;
 }
 
@@ -55,6 +60,10 @@
   animation: toggle-down;
   animation-duration: 0.5s;
 }
+
+/* :host ::ng-deep i:first-child {
+  color: black;
+} */
 
 @keyframes toggle-down {
   from{

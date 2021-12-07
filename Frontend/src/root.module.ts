@@ -54,9 +54,9 @@ function appInitializerFactory(injector: Injector, platformLocation: PlatformLoc
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     RootRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

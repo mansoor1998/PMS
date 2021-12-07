@@ -34,7 +34,10 @@ namespace PMS.DataAccess.DataAccess
                 .OnDelete(DeleteBehavior.Restrict);
             #endregion
 
-            modelBuilder.Entity<Medicine>().HasQueryFilter(d => d.IsDeleted == false);
+            //modelBuilder.ForNpgsqlUseIdentityColumns();
+            //modelBuilder.Entity<IEntity>().HasQueryFilter(d => d.IsDeleted == false);
+
+            modelBuilder.SetQueryFilterOnAllEntities<IEntity>(p => p.IsDeleted == false);
         }
 
         #region Models

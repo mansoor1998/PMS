@@ -15,6 +15,6 @@ namespace PMS.Dto.Medicine
         public double Quantity { get; set; }
         public double PricePerUnit { get; set; }
         public long? MedicalCompanyId { get; set; }
-        public long UserId { get; set; }
+        public string MedicalCompanyName { get; set; }
     }
 }
