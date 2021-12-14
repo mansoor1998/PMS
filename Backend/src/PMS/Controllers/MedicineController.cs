@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PMS.DataAccess.Models;
+using PMS.Dto;
 using PMS.Dto.Medicine;
 using PMS.Repository;
 using PMS.Repository.MedicineRepo;
@@ -37,20 +35,20 @@ namespace PMS.Controllers
         }
 
         [HttpGet("all")]
-        public List<CreateMedicineDto> GetAllMedicines()
+        public AsyncListDto<CreateMedicineDto> GetAllMedicines([FormQuery] int? skip, [FormQuery] int? max)
         {
-            var medicines = _repository.GetAll();
+            var medicinesAsync = _repository.GetAllIncluding(x => x.MedicalCompany, skip, max);
             List<CreateMedicineDto> medicinesDto = new List<CreateMedicineDto>();
+            var medicines = medicinesAsync.ArrayList;
             for (int i = 0; i < medicines.Count; i++)
             {
                 CreateMedicineDto medicineRef = new CreateMedicineDto();
                 medicinesDto.Add(medicineRef);
                 Utility.Copier<Medicine, CreateMedicineDto>.Copy(medicines[i], medicineRef);
+                medicineRef.MedicalCompanyName = medicines[i].MedicalCompany?.Name;
             }
 
-            _generic.GetAll();
-
-            return medicinesDto;
+            return new AsyncListDto<CreateMedicineDto>() { total = medicinesAsync.total, ArrayList = medicinesDto };
         }
 
         [HttpGet("{id}")]
@@ -70,16 +68,23 @@ namespace PMS.Controllers
         [HttpPut]
         public void UpdateMedicine(CreateMedicineDto medicineDto)
         {
-            var medicines = new Medicine();
-            Utility.Copier<CreateMedicineDto, Medicine>.Copy(medicineDto, medicines);
+            //var medicines = new Medicine();
             try
             {
-                _repository.Update(medicines);
+                var medicine = _repository.GetById(medicineDto.Id);
+                Utility.Copier<CreateMedicineDto, Medicine>.Copy(medicineDto, medicine);
+                _repository.Update(medicine);
             }
             catch (System.Exception e)
             {
 
             }
+        }
+
+        [HttpDelete("{id}")]
+        public void DeleteMedicine (long id)
+        {
+            _repository.SoftDelete(id);
         }
 
     }

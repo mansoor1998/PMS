@@ -10,6 +10,7 @@ import { VisibilityDirective } from './directives/visibility.directive';
 import { LoaderDirective } from './directives/loader.directive';
 import { PopupDialogComponent } from './components/error-dialog/popup-dialog.component';
 import {PreLoaderComponent} from './components/pre-loader/pre-loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {PreLoaderComponent} from './components/pre-loader/pre-loader.component';
   imports: [
     CommonModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
   ],
   entryComponents: [
     PopupDialogComponent

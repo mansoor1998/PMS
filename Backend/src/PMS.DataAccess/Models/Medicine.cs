@@ -23,6 +23,6 @@ namespace PMS.DataAccess.Models
         public long UserId { get; set; }
         [ForeignKey("UserId")]
         public User user { get; set; }
-        public List<Cart> Carts { get; set; } = new List<Cart>();
+        public List<Cart> Carts { get; set; }
     }
 }

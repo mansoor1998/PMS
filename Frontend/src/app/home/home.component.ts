@@ -11,10 +11,17 @@ import {Framework} from '../../shared/framework';
 })
 export class HomeComponent implements OnInit {
   isLoading: any = true;
+  public data: any;
+  public currentPage: number = 1;
   constructor(private framework: Framework) { }
 
   ngOnInit(): void {
     console.log(this.framework.session);
+
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(json => this.data = json)
+
   }
 
 }

@@ -29,6 +29,14 @@
     <Compile Remove="Migrations\20200809184842_InitialDbMigration.Designer.cs" />
     <Compile Remove="Migrations\20211010145741_inital migratoin.cs" />
     <Compile Remove="Migrations\20211010145741_inital migratoin.Designer.cs" />
+    <Compile Remove="Migrations\20211206114744_Identity-Autoincrement.cs" />
+    <Compile Remove="Migrations\20211206114744_Identity-Autoincrement.Designer.cs" />
+    <Compile Remove="Migrations\20211206114958_Identity-Autoincrement.cs" />
+    <Compile Remove="Migrations\20211206114958_Identity-Autoincrement.Designer.cs" />
+    <Compile Remove="Migrations\20211206115100_Identity-Autoincrement.cs" />
+    <Compile Remove="Migrations\20211206115100_Identity-Autoincrement.Designer.cs" />
+    <Compile Remove="Migrations\20211206115316_Identity-Autoincrement.cs" />
+    <Compile Remove="Migrations\20211206115316_Identity-Autoincrement.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

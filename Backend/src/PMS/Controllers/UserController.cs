@@ -104,7 +104,7 @@ namespace PMS.Controllers
             }
             try
             {
-                appSession.userId = user.Id;
+                appSession.userId = (long)user.Id;
                 appSession.Username = user.Username;
                 appSession.Name = user.Name;
                 appSession.RoleName = user.Role.Name;
@@ -127,8 +127,9 @@ namespace PMS.Controllers
         [HttpGet]
         public List<CreateUserDto> GetAllUsers()
         {
-            var users =  _repository.GetAll();
+            var usersAsync =  _repository.GetAll();
             List<CreateUserDto> usersDto = new List<CreateUserDto>();
+            var users = usersAsync.ArrayList;
             for (int i = 0; i < users.Count; i++)
             {
                 CreateUserDto userDtoSingle = new CreateUserDto();

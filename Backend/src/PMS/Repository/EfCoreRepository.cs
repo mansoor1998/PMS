@@ -25,7 +25,7 @@ namespace PMS.Repository
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
 
-            return entity.Id;
+            return (long)entity.Id;
         }
 
         /*
@@ -34,15 +34,23 @@ namespace PMS.Repository
          * If SkipCount is defined it will skip the data in result.
          * MaxResult selects the amount of data needed to be selected.
          */
-        public List<TEntity> GetAll(int? SkipCount = null, int? MaxResultCount = null)
+        public AsyncList<TEntity> GetAll(int? SkipCount = null, int? MaxResultCount = null)
         {
-            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>();
+            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>().OrderByDescending(x => x.Created);
+            int total = EntityQuery.Count();
             EntityQuery = (SkipCount != null) ? EntityQuery.Skip((int) SkipCount) : EntityQuery;
 
             if (MaxResultCount <= 0) throw new InvalidOperationException(MaxResultCount.GetType().Name + " cannot be less than or equal to 0");
 
             EntityQuery = (MaxResultCount != null) ? EntityQuery.Take((int)MaxResultCount) : EntityQuery;
-            return EntityQuery.ToList();
+
+            var result = EntityQuery.ToList();
+
+            return new AsyncList<TEntity>()
+            {
+                total = total,
+                ArrayList = result
+            };
         }
 
         public TEntity GetById(long Id)
@@ -76,8 +84,14 @@ namespace PMS.Repository
          */
         public void SoftDelete(long Id)
         {
-            throw new Exception();
-            TEntity entity = (TEntity)Activator.CreateInstance(typeof(TEntity), new object[] { });
+            //throw new Exception();
+            //TEntity entity = (TEntity)Activator.CreateInstance(typeof(TEntity), new object[] {  });
+
+            //  _context.Set<TEntity>().Update (); //.FirstOrDefault(I => I.Id == Id);
+
+            TEntity result = this.GetById(Id);
+            result.IsDeleted = true;
+            this.Update(result);
 
             //entity.IsDeleted = true;
             //entity.Id = Id;
@@ -86,6 +100,36 @@ namespace PMS.Repository
             //entityContext.Attach(entity);
             //_context.Entry(entity).Property(x => x.IsDeleted).IsModified = true;
             //_context.SaveChanges();
+        }
+
+        public AsyncList<TEntity> GetAllIncluding(System.Linq.Expressions.Expression<Func<TEntity, object>> navigationType, int? SkipCount = null, int? MaxResultCount = null)
+        {
+            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>();
+            int total = EntityQuery.Count();
+
+            try
+            {
+                // join query with navigation property
+                EntityQuery = EntityQuery.Include(navigationType).OrderByDescending(x => x.Created);
+
+                // paginate the result.
+                EntityQuery = (SkipCount != null) ? EntityQuery.Skip((int)SkipCount) : EntityQuery;
+                if (MaxResultCount <= 0) throw new InvalidOperationException(MaxResultCount.GetType().Name + " cannot be less than or equal to 0");
+                EntityQuery = (MaxResultCount != null) ? EntityQuery.Take((int)MaxResultCount) : EntityQuery;
+                
+                // execute the result.
+                var result = EntityQuery.ToList();
+
+                return new AsyncList<TEntity>()
+                {
+                    total = total,
+                    ArrayList = result
+                };
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }   
 }

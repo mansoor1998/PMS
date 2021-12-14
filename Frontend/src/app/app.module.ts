@@ -11,6 +11,21 @@ import { HomeComponent } from './home/home.component';
 import { AppSidebarNavComponent } from './layout/app-sidebar-nav/app-sidebar-nav.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatIconModule } from '@angular/material/icon';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { InventoryComponent } from './inventory/inventory.component';
+import { InvoiceSearchComponent } from './invoice-search/invoice-search.component';
+import { CompanyComponent } from './company/company.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { SalesReportComponent } from './sales-report/sales-report.component';
+import { AddMedicineComponent } from './medicine/add-medicine/add-medicine.component';
+import { AddPharmacistComponent } from './pharmacist/add-pharmacist/add-pharmacist.component';
+import { AddCompanyComponent } from './company/add-company/add-company.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,14 +35,29 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     TopbarComponent,
     SidebarUserAreaComponent,
     HomeComponent,
-    AppSidebarNavComponent
+    AppSidebarNavComponent,
+    InventoryComponent,
+    InvoiceSearchComponent,
+    CompanyComponent,
+    MedicineComponent,
+    PharmacistComponent,
+    SalesReportComponent,
+    AddMedicineComponent,
+    AddPharmacistComponent,
+    AddCompanyComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     ShareModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatIconModule,
+    NgxPaginationModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: []
 })

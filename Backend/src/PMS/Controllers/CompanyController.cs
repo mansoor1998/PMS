@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using PMS.DataAccess.DataAccess;
 using PMS.DataAccess.Models;
+using PMS.Dto;
 using PMS.Dto.MedicineCompany;
+using PMS.Repository;
 using PMS.Repository.MedicalCompanyRepo;
 using System;
 using System.Collections.Generic;
@@ -37,17 +39,18 @@ namespace PMS.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("all")]
-        public List<CreateCompanyDto> GetAllCompanies()
+        public AsyncListDto<CreateCompanyDto> GetAllCompanies([FormQuery] int? skip, [FormQuery] int? max)
         {   
-            var companies = _repository.GetAll();
+            var companiesAsync = _repository.GetAll(skip, max);
             List<CreateCompanyDto> companiesDto = new List<CreateCompanyDto>();
+            var companies = companiesAsync.ArrayList;
             for (int i = 0; i < companies.Count; i++)
             {
                 CreateCompanyDto companyRef = new CreateCompanyDto();
                 companiesDto.Add(companyRef);
                 Utility.Copier<MedicalCompany, CreateCompanyDto>.Copy(companies[i], companyRef);
             }
-            return companiesDto;
+            return new AsyncListDto<CreateCompanyDto>() { total = companiesAsync.total, ArrayList = companiesDto };
         }
         [HttpGet("{id}")]
         public CreateCompanyDto GetCompany(long id)
@@ -66,11 +69,11 @@ namespace PMS.Controllers
         [HttpPut]
         public void UpdateCompany(CreateCompanyDto companyDto)
         {
-            var medicalCompany = new MedicalCompany();
-            Utility.Copier<CreateCompanyDto, MedicalCompany>.Copy(companyDto, medicalCompany);
             try
             {
-                _repository.Update(medicalCompany);
+                var company = _repository.GetById(companyDto.Id);
+                Utility.Copier<CreateCompanyDto, MedicalCompany>.Copy(companyDto, company);
+                _repository.Update(company);
             }
             catch (System.Exception e)
             {
