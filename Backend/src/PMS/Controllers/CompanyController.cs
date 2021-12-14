@@ -69,11 +69,11 @@ namespace PMS.Controllers
         [HttpPut]
         public void UpdateCompany(CreateCompanyDto companyDto)
         {
-            var medicalCompany = new MedicalCompany();
-            Utility.Copier<CreateCompanyDto, MedicalCompany>.Copy(companyDto, medicalCompany);
             try
             {
-                _repository.Update(medicalCompany);
+                var company = _repository.GetById(companyDto.Id);
+                Utility.Copier<CreateCompanyDto, MedicalCompany>.Copy(companyDto, company);
+                _repository.Update(company);
             }
             catch (System.Exception e)
             {
