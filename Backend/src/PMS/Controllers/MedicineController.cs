@@ -35,9 +35,10 @@ namespace PMS.Controllers
         }
 
         [HttpGet("all")]
-        public AsyncListDto<CreateMedicineDto> GetAllMedicines([FormQuery] int? skip, [FormQuery] int? max)
+        public AsyncListDto<CreateMedicineDto> GetAllMedicines([FormQuery] int? skip, [FormQuery] int? max, [FormQuery] string? search = null)
         {
-            var medicinesAsync = _repository.GetAllIncluding(x => x.MedicalCompany, skip, max);
+            var medicinesAsync = _repository.GetAllIncluding(x => x.MedicalCompany, skip, max, 
+                x => x.Name.Contains(search != null ? search: "") || x.BatchCode.Contains(search != null ? search : "") || x.MedicalCompany.Name.Contains(search != null ? search : ""));
             List<CreateMedicineDto> medicinesDto = new List<CreateMedicineDto>();
             var medicines = medicinesAsync.ArrayList;
             for (int i = 0; i < medicines.Count; i++)

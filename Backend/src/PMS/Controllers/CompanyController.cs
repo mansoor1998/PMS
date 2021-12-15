@@ -39,9 +39,10 @@ namespace PMS.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("all")]
-        public AsyncListDto<CreateCompanyDto> GetAllCompanies([FormQuery] int? skip, [FormQuery] int? max)
+        public AsyncListDto<CreateCompanyDto> GetAllCompanies([FormQuery] int? skip, [FormQuery] int? max, [FormQuery] string? search = null)
         {   
-            var companiesAsync = _repository.GetAll(skip, max);
+            var companiesAsync = _repository.GetAll(skip, max, 
+                x => x.Name.Contains(search != null ? search : "") || x.Description.Contains(search != null ? search : ""));
             List<CreateCompanyDto> companiesDto = new List<CreateCompanyDto>();
             var companies = companiesAsync.ArrayList;
             for (int i = 0; i < companies.Count; i++)
@@ -79,6 +80,13 @@ namespace PMS.Controllers
             {
 
             }
+        }
+
+
+        [HttpDelete("{id}")]
+        public void DeleteCompany(long id)
+        {
+            _repository.SoftDelete(id);
         }
 
         [AllowAnonymous]

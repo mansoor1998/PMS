@@ -34,14 +34,16 @@ namespace PMS.Repository
          * If SkipCount is defined it will skip the data in result.
          * MaxResult selects the amount of data needed to be selected.
          */
-        public AsyncList<TEntity> GetAll(int? SkipCount = null, int? MaxResultCount = null)
+        public AsyncList<TEntity> GetAll(int? SkipCount = null, int? MaxResultCount = null, System.Linq.Expressions.Expression<Func<TEntity, bool>> searchFilter = null)
         {
-            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>().OrderByDescending(x => x.Created);
+            IQueryable<TEntity> EntityQuery = _context.Set<TEntity>().OrderByDescending(x => x.Created); //.Where(searchFilter);
+
+            if (searchFilter != null) EntityQuery = EntityQuery.Where(searchFilter);
+
             int total = EntityQuery.Count();
+
             EntityQuery = (SkipCount != null) ? EntityQuery.Skip((int) SkipCount) : EntityQuery;
-
             if (MaxResultCount <= 0) throw new InvalidOperationException(MaxResultCount.GetType().Name + " cannot be less than or equal to 0");
-
             EntityQuery = (MaxResultCount != null) ? EntityQuery.Take((int)MaxResultCount) : EntityQuery;
 
             var result = EntityQuery.ToList();
@@ -102,21 +104,26 @@ namespace PMS.Repository
             //_context.SaveChanges();
         }
 
-        public AsyncList<TEntity> GetAllIncluding(System.Linq.Expressions.Expression<Func<TEntity, object>> navigationType, int? SkipCount = null, int? MaxResultCount = null)
+        public AsyncList<TEntity> GetAllIncluding(System.Linq.Expressions.Expression<Func<TEntity, object>> navigationType, int? SkipCount = null, int? MaxResultCount = null, System.Linq.Expressions.Expression<Func<TEntity, bool>> searchFilter = null)
         {
             IQueryable<TEntity> EntityQuery = _context.Set<TEntity>();
-            int total = EntityQuery.Count();
+            int total = 0;
 
             try
             {
                 // join query with navigation property
-                EntityQuery = EntityQuery.Include(navigationType).OrderByDescending(x => x.Created);
+                EntityQuery = EntityQuery.Where(x => x.IsDeleted == false).Include(navigationType).OrderByDescending(x => x.Created).IgnoreQueryFilters();
+                if (searchFilter != null) EntityQuery = EntityQuery.Where(searchFilter);
+                // count the total result 
+                total = EntityQuery.Count();
 
                 // paginate the result.
                 EntityQuery = (SkipCount != null) ? EntityQuery.Skip((int)SkipCount) : EntityQuery;
                 if (MaxResultCount <= 0) throw new InvalidOperationException(MaxResultCount.GetType().Name + " cannot be less than or equal to 0");
                 EntityQuery = (MaxResultCount != null) ? EntityQuery.Take((int)MaxResultCount) : EntityQuery;
-                
+
+
+
                 // execute the result.
                 var result = EntityQuery.ToList();
 
