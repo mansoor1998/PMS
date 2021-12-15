@@ -29,7 +29,7 @@ export class AddMedicineComponent implements OnInit {
     this.companyService.getall().subscribe((data: {
       total: number,
       arrayList: CreateCompanyDto[]
-  }) => {
+    }) => {
       console.log('the result of the companies.', data);
       this.companies = data.arrayList;
     });
@@ -40,7 +40,7 @@ export class AddMedicineComponent implements OnInit {
         this.medicine.patchValue({
           ...result
         });
-        Object.assign(this.medicine.value, result);
+        // Object.assign(this.medicine.value, result);
       });
     }
 

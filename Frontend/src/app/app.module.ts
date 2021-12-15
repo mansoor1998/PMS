@@ -26,6 +26,7 @@ import { AddMedicineComponent } from './medicine/add-medicine/add-medicine.compo
 import { AddPharmacistComponent } from './pharmacist/add-pharmacist/add-pharmacist.component';
 import { AddCompanyComponent } from './company/add-company/add-company.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -57,7 +58,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     NgxPaginationModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: []
 })

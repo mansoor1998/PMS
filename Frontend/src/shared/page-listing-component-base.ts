@@ -11,6 +11,7 @@ export abstract class PageListingComponentBase<T extends Identity>  {
     public isTableLoading = false;
     public totalItems;
     public total;
+    public search: string = '';
 
     public busy = false;
 
@@ -18,10 +19,10 @@ export abstract class PageListingComponentBase<T extends Identity>  {
         // this.items = [];
     }
 
-    protected abstract refresh();
-    protected abstract addOrEdit(entity: T);
-    protected abstract delete(entity: T);
-    protected abstract onPageChange(page: number);
+    public abstract refresh();
+    public abstract addOrEdit(entity: T);
+    public abstract delete(entity: T);
+    public abstract onPageChange(page: number);
     // delete(id: number){
     //     let index = this.items.findIndex(i => i.id === id);
     //     if(index != -1)

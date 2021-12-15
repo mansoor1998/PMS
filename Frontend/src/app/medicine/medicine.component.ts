@@ -27,7 +27,7 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
     this.medicineService.getall().subscribe((data: {
       total: number,
       arrayList: CreateMedicineDto[]
-  }) => {
+    }) => {
       console.log (data);
       this.medicines = data.arrayList;
       this.total = data.total;
@@ -60,29 +60,19 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
   }
 
 
-  // public edit(entity: CreateMedicineDto) {
-  //   const dialogRef = this.dialog.open(AddMedicineComponent, {
-  //     width: '400px',
-  //     data: { id: entity.id }
-  //   });
-  // }
-
   public delete(entity: CreateMedicineDto) {
 
     this.medicineService.delete(entity.id).subscribe(() => {
-      // let index = this.medicines.findIndex(x => x.id == entity.id);
-      // this.medicines.splice( index, 1 );
       if ( (this.total - 1) < (this.pageNumber - 1) * this.pageSize + 1 ) this.pageNumber --;
       this.refresh();
     });
   }
 
-  public refresh(){
+  public refresh(isSearch: boolean = false){
     this.busy = true;
     // this.pageNumber = Math.floor((this.total - 1) / this.pageSize);
-    
-    
-    this.medicineService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((data: {
+    if(isSearch) this.pageNumber = 1;
+    this.medicineService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize, this.search).subscribe((data: {
       total: number,
       arrayList: CreateMedicineDto[]
   }) => {

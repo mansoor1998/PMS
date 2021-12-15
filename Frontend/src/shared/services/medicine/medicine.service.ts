@@ -20,14 +20,15 @@ export class MedicineService{
         });
     }
 
-    public getall(skip: number = 0, max: number = 10) : Observable<{
+    public getall(skip: number = 0, max: number = 10, search: string = '') : Observable<{
         total: number,
         arrayList: CreateMedicineDto[]
     }> {
         const headers = new HttpHeaders({
             Authorization: 'Bearer ' + this.framework.session.getToken('auth-token')
         });
-        return this.http.get(this.REMOTE_BASE_URL + `/api/medicine/all?skip=${skip}&max=${max}`, {headers}) as Observable<{
+        console.log(search);
+        return this.http.get(this.REMOTE_BASE_URL + `/api/medicine/all?skip=${skip}&max=${max}&search=${search}`, {headers}) as Observable<{
             total: number,
             arrayList: CreateMedicineDto[]
         }>;

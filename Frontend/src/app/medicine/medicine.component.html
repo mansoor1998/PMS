@@ -1,8 +1,9 @@
 <div class="card w-100 shadow" [@routerTransition]>
     <div class="card-body">
         <div class="head">
-            <div class="input-group input-group-sm mb-3">
-                <input type="text" class="form-control" placeholder="Search...">
+            <div class="input-group input-group-sm mb-3 d-flex align-items-center">
+                <input [(ngModel)]="search" type="text" class="form-control m-1" placeholder="Search...">
+                <button (click)="refresh(true)" class="btn btn-primary">Search</button>
             </div>
         </div>
 

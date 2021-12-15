@@ -15,15 +15,9 @@ import { AddCompanyComponent } from './add-company/add-company.component';
   animations: [appModuleAnimation()]
 })
 export class CompanyComponent extends PageListingComponentBase<CreateCompanyDto> implements OnInit {
-  protected onPageChange(page: number) {
-    throw new Error('Method not implemented.');
-  }
-  protected refresh() {
-    throw new Error('Method not implemented.');
-  }
-  protected addOrEdit(entity: CreateCompanyDto) {
-    throw new Error('Method not implemented.');
-  }
+  
+
+  
   
 
   public companies: Array<CreateCompanyDto> = [ 
@@ -58,41 +52,53 @@ export class CompanyComponent extends PageListingComponentBase<CreateCompanyDto>
     });
   }
 
-  public add(){
+  public addOrEdit(entity: CreateCompanyDto = null){
     const dialogRef = this.dialog.open(AddCompanyComponent, {
-      width: '400px'
+      width: '400px',
+      data: (entity) ? { id: entity.id } : undefined
     });
 
-    dialogRef.afterClosed().subscribe((result: CreateCompanyDto) => {
-      // calling a service and passing the result service.
-
-      // sample code saved for later on.
-      // , (err: Error) => {
-      //   // if(err.status === 500)
-      //   this.framework.message('Interal Server Error', 'Error in edit', 'error');
-      // }
-
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('closed');
+      if(result == 'ADD')
+        this.refresh();
     });
   }
 
-  public edit(item: CreateCompanyDto){
-    const dialogRef = this.dialog.open(AddCompanyComponent, {
-      width: '400px',
-      data: {
-        id: item.id
-      }
-    });
+  public onPageChange(page: number) {
+    if(this.busy) return;
+    this.pageNumber = page;
+    this.busy = true;
+    this.companyService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((item) => {
+      this.total = item.total;
+      this.companies = item.arrayList;
 
-    dialogRef.afterClosed().subscribe((result: CreateCompanyDto) => {
-      // after closeing the dialog call the refresh button.
-    })
+      this.busy = false;
+    }, (err) => this.busy = false)
   }
 
   public delete(entity: CreateCompanyDto) {
-    // this is only sample for this occasion.
-    const index = this.companies.findIndex(x => x.id === entity.id);
-    this.companies.splice(index, 1);
-    // throw new Error('Method not implemented.');
+
+    this.companyService.delete(entity.id).subscribe(() => {
+      if ( (this.total - 1) < (this.pageNumber - 1) * this.pageSize + 1 ) this.pageNumber --;
+      this.refresh();
+    });
+  }
+
+  public refresh(isSearch: boolean = false){
+    this.busy = true;
+    // this.pageNumber = Math.floor((this.total - 1) / this.pageSize);
+    if(isSearch) this.pageNumber = 1;
+    this.companyService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize, this.search).subscribe((data: {
+      total: number,
+      arrayList: CreateCompanyDto[]
+  }) => {
+      this.companies = data.arrayList;
+      this.total = data.total;
+      this.busy = false;
+    }, () => {
+      this.busy = false;
+    });
   }
 
 }
