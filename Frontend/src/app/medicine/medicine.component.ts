@@ -28,7 +28,7 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
       total: number,
       arrayList: CreateMedicineDto[]
     }) => {
-      console.log (data);
+      // console.log (data);
       this.medicines = data.arrayList;
       this.total = data.total;
       this.busy = false;

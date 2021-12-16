@@ -4,6 +4,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse, HttpResponseBa
 import {Framework} from '../../framework';
 import {catchError} from 'rxjs/operators';
 import {AppConst} from '../../AppConst';
+import { AppSessionDto, AuthDto, ChangePassword, CreateUserDto, GetUserDto } from './user.dto';
 
 
 // @ts-ignore
@@ -13,9 +14,18 @@ import {AppConst} from '../../AppConst';
 export class UserService {
 
   private REMOTE_BASE_URL = '';
+  private headers: HttpHeaders;
 
   constructor(private http: HttpClient, private framework?: Framework) {
     this.REMOTE_BASE_URL = AppConst.remoteServiceBaseUrl;
+    this.headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.framework.session.getToken('auth-token')
+    });
+  }
+
+  public create(user: CreateUserDto) {
+    console.log(user);
+    return this.http.post(this.REMOTE_BASE_URL + '/api/user', user, {headers: this.headers});
   }
 
   public getUserConfiguration(): Observable<AppSessionDto> | any{
@@ -44,18 +54,19 @@ export class UserService {
     );
   }
 
+  public getAll(skip: number = 0, max: number = 10, search: string = ''): Observable<{ total: number, arrayList: GetUserDto[]}> {
+    return this.http.get(this.REMOTE_BASE_URL + `/api/user?skip=${skip}&max=${max}&search=${search}`, { headers: this.headers }) as Observable<{ total: number, arrayList: GetUserDto[]} >;
+  }
+
+  public getAllRoles(): Observable<string[]>{
+    return this.http.get(this.REMOTE_BASE_URL + '/api/user/roles', { headers: this.headers }) as Observable<string[]>;
+  }
+
+  public changePassword(changePassword: ChangePassword){
+    return this.http.post(this.REMOTE_BASE_URL + `/api/user/ChangePassword`, changePassword , { headers: this.headers });
+  }
+
+
 }
 
 
-export class AppSessionDto{
-  public  userId: number;
-  public  username: string;
-  public  name: string;
-  public  roleName: string;
-  public  allRoles: string[];
-}
-
-export class AuthDto{
-  public username: string | undefined;
-  public password: string | undefined;
-}

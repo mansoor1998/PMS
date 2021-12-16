@@ -19,7 +19,7 @@ export abstract class PageListingComponentBase<T extends Identity>  {
         // this.items = [];
     }
 
-    public abstract refresh();
+    public abstract refresh(isSearch: boolean);
     public abstract addOrEdit(entity: T);
     public abstract delete(entity: T);
     public abstract onPageChange(page: number);

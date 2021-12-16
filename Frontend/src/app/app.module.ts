@@ -27,6 +27,8 @@ import { AddPharmacistComponent } from './pharmacist/add-pharmacist/add-pharmaci
 import { AddCompanyComponent } from './company/add-company/add-company.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 
 
@@ -46,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     AddMedicineComponent,
     AddPharmacistComponent,
     AddCompanyComponent,
+    UpdatePasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -59,7 +62,8 @@ import { FormsModule } from '@angular/forms';
     NgxPaginationModule,
     MatDialogModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ClipboardModule
   ],
   providers: []
 })

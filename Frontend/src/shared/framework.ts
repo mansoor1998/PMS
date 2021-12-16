@@ -14,7 +14,7 @@ export class Framework{
     this.injector = injector;
   }
 
-  public message: any = Popup.getInstance(this.injector);
+  public message: Popup = Popup.getInstance(this.injector) as Popup;
   public preLoader: any = PreLoader.getInstance(this.injector);
   public session: any = AppSession.getInstance(this.injector);
 

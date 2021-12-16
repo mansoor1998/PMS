@@ -6,9 +6,10 @@ import {RootRoutingModule} from './root-routing.module';
 import {HttpClient, HttpClientModule, HttpErrorResponse} from '@angular/common/http';
 import {RootComponent} from './root.component';
 import {Framework} from './shared/framework';
-import {AppSessionDto, UserService} from './shared/services/users/user.service';
+import {AppSessionDto} from './shared/services/users/user.dto';
 import {AppConst} from './shared/AppConst';
 import {debounce, debounceTime} from 'rxjs/operators';
+import { UserService } from './shared/services/users/user.service';
 
 
 // tslint:disable-next-line:typedef

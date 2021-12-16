@@ -16,7 +16,7 @@
     <app-dropdown-menu>
       <i matRipple [matRippleColor]="'#FFFFFF50'" #icon class="material-icons">keyboard_arrow_down</i>
       <ul #menu>
-        <li matRipple [matRippleColor]="'#FFFFFF50'"><a><i class="material-icons">lock</i><span>Update Password</span></a></li>
+        <li matRipple [routerLink]="['/app/update-password']" [matRippleColor]="'#FFFFFF50'"><a><i class="material-icons">lock</i><span>Update Password</span></a></li>
         <li matRipple [matRippleColor]="'#FFFFFF50'" (click)="logout($event)"><a><i class="material-icons">input</i><span>{{ 'Logout' }}</span></a></li>
       </ul>
     </app-dropdown-menu>

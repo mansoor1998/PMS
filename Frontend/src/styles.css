@@ -199,6 +199,10 @@ body { margin: 0; font-family: BalsamiqSans, Roboto, "Helvetica Neue", sans-seri
 }
 
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .table-scrollbar::-webkit-scrollbar {
   width: 16px;
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {AuthDto, UserService} from '../../shared/services/users/user.service';
+import {UserService} from '../../shared/services/users/user.service';
 import {Framework} from '../../shared/framework';
+import { AuthDto } from 'src/shared/services/users/user.dto';
 
 @Component({
   selector: 'app-login',
