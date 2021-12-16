@@ -18,7 +18,7 @@ namespace PMS.Repository
             _context = context;
         }
 
-        public long Create(TEntity entity)
+        public virtual long Create(TEntity entity)
         {
             entity.Created = DateTime.Now;
             entity.Updated = DateTime.Now;

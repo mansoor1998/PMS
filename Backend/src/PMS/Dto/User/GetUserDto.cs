@@ -13,5 +13,6 @@ namespace PMS.Dto.User
         public string Contact { get; set; }
         public bool Gender { get; set; }
         public long RoleId { get; set; }
+        public string RoleName { get; set; }
     }
 }

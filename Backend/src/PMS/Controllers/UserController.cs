@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -11,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using PMS.DataAccess.Models;
 using PMS.Dto;
 using PMS.Dto.User;
+using PMS.Repository;
 using PMS.Repository.UserRepo;
 
 namespace PMS.Controllers
@@ -21,9 +23,11 @@ namespace PMS.Controllers
     public class UserController : ControllerBase
     {
         IUserRepository _repository;
+        //IRepository<Role> _roleRepository;
         public UserController(IUserRepository repository)
         {
             _repository = repository;
+            //_roleRepository = _roleRepository;
         }
         [AllowAnonymous]
         [HttpPost("authenticate")]
@@ -68,7 +72,7 @@ namespace PMS.Controllers
 
             string hashString = this.generateHash(user.Password);
             var entity = new User();
-            Utility.Copier<CreateUserDto, User>.Copy( user, entity );
+            Utility.Copier<CreateUserDto, User>.Copy(user, entity);
             entity.Password = hashString;
 
             try
@@ -117,7 +121,7 @@ namespace PMS.Controllers
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -125,18 +129,60 @@ namespace PMS.Controllers
             return appSession;
         }
         [HttpGet]
-        public List<CreateUserDto> GetAllUsers()
+        public AsyncListDto<GetUserDto> GetAllUsers([FormQuery] int? skip = null, [FormQuery] int? max = null, [FormQuery] string? search = null)
         {
-            var usersAsync =  _repository.GetAll();
-            List<CreateUserDto> usersDto = new List<CreateUserDto>();
+            var usersAsync = _repository.GetAllIncluding(x => x.Role, skip, max, x => x.Name.Contains(search != null ? search : "") 
+                                                                                            || x.Username.Contains(search != null ? search : "") 
+                                                                                            || x.Contact.Contains(search != null ? search : null) || x.Role.Name.Contains(search != null ? search : null));
+            List<GetUserDto> usersDto = new List<GetUserDto>();
             var users = usersAsync.ArrayList;
             for (int i = 0; i < users.Count; i++)
             {
-                CreateUserDto userDtoSingle = new CreateUserDto();
-                Utility.Copier<User, CreateUserDto>.Copy(users[i], userDtoSingle);
-                usersDto.Add(userDtoSingle);
+                GetUserDto userRef = new GetUserDto();
+                usersDto.Add(userRef);
+                Utility.Copier<User, GetUserDto>.Copy(users[i], userRef);
+                userRef.RoleName = users[i].Role?.Name;
+                //Utility.Copier<User, CreateUserDto>.Copy(users[i], userDtoSingle);
             }
-            return usersDto;
+            return new AsyncListDto<GetUserDto>() { total = usersAsync.total, ArrayList = usersDto }; ;
+        }
+
+        [HttpPost("ChangePassword")]
+        public void ChangePassword(ChangePassword changePassword)
+        {
+            long userId = 0;
+            DataAccess.Models.User user = null;
+            var identity = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (identity != null)
+            {
+                userId = Int64.Parse(identity);
+                user = _repository.GetById(userId);
+
+                if(user.Password == this.generateHash(changePassword.PreviousPassword))
+                {
+                    string hashString = this.generateHash(changePassword.NewPassword);
+                    user.Password = hashString;
+                    try
+                    {
+                        _repository.Update(user);
+                    }
+                    catch (Exception e)
+                    {
+                        //throw new ClientErrorData();
+                    }
+                } 
+                else
+                {
+                    throw new Exception("Previous password provided is wrong");
+                }
+            }
+        }
+
+        [HttpGet("roles")]
+        public string[] GetAllRoles()
+        {
+            var result = _repository.GetAllRoles();
+            return result.Select(x => x.Name).ToArray();
         }
 
         public string generateHash(string text)
