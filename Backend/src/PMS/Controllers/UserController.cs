@@ -129,7 +129,7 @@ namespace PMS.Controllers
             return appSession;
         }
         [HttpGet]
-        public AsyncListDto<GetUserDto> GetAllUsers([FormQuery] int? skip = null, [FormQuery] int? max = null, [FormQuery] string? search = null)
+        public AsyncListDto<GetUserDto> GetAllUsers([FormQuery] int? skip = null, [FormQuery] int? max = null, [FormQuery] string search = null)
         {
             var usersAsync = _repository.GetAllIncluding(x => x.Role, skip, max, x => x.Name.Contains(search != null ? search : "") 
                                                                                             || x.Username.Contains(search != null ? search : "") 

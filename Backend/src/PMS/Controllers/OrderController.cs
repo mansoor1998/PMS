@@ -5,13 +5,10 @@ using PMS.DataAccess.Models;
 using PMS.Dto.Cart;
 using PMS.Dto.Medicine;
 using PMS.Repository.CartRepo;
-using PMS.Repository.InvoiceRepo;
 using PMS.Repository.MedicineRepo;
 using PMS.Repository.OrderRepo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
 using System.Security.Claims;
 
 namespace PMS.Controllers
@@ -23,13 +20,12 @@ namespace PMS.Controllers
     {
         IOrderRepository _orderRepository;
         ICartRepository _cartRepossitory;
-        IInvoiceRepository _invoiceRepository;
+        //IInvoiceRepository _invoiceRepository;
         IMedicineRepository _medicineRepository;
-        public OrderController(IOrderRepository orderRepository, ICartRepository cartRepossitory, IInvoiceRepository invoiceRepository, IMedicineRepository medicineRepository)
+        public OrderController(IOrderRepository orderRepository, ICartRepository cartRepossitory, IMedicineRepository medicineRepository)
         {
             _orderRepository = orderRepository;
             _cartRepossitory = cartRepossitory;
-            _invoiceRepository = invoiceRepository;
             _medicineRepository = medicineRepository;
         }
         [HttpPost("add")]
@@ -42,7 +38,7 @@ namespace PMS.Controllers
             {
                 var currentOrder = new Order();
                 currentOrder.UserId = userId;
-                currentOrder.finalized = false;
+                //currentOrder.finalized = false;
                 orderId = _orderRepository.Create(currentOrder);
             }
             else
@@ -89,15 +85,15 @@ namespace PMS.Controllers
             // Make the order finalized.
             var userId = Int64.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             Order order = _orderRepository.GetCurrentOrder(userId);
-            order.finalized = true;
-            order.FinalizedDate = DateTime.Now;
+            //order.finalized = true;
+            //order.FinalizedDate = DateTime.Now;
             _orderRepository.Update(order);
             // An invoice should be created
             long orderId = (long)order.Id;
-            Invoice invoice = new Invoice();
-            invoice.InvoiceNo = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12).Select(s => s[(new Random()).Next(s.Length)]).ToArray());
-            invoice.OrderId = orderId;
-            _invoiceRepository.Create(invoice);
+            //Invoice invoice = new Invoice();
+            //invoice.InvoiceNo = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 12).Select(s => s[(new Random()).Next(s.Length)]).ToArray());
+            //invoice.OrderId = orderId;
+            //_invoiceRepository.Create(invoice);
         }
 
         [HttpGet("history")]

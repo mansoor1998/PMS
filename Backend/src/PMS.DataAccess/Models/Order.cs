@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+
+
+// SHIPPED.
+// OPEEND.
+
 
 namespace PMS.DataAccess.Models
 {
@@ -14,10 +16,12 @@ namespace PMS.DataAccess.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
         [DefaultValue(0)]
-        public bool finalized { get; set; }
         public string CustomerName { get; set; }
-        public string MobileNo { get; set; }
-        public List<Cart> Carts { get; set; } = new List<Cart>();
-        public DateTime FinalizedDate { get; set; }
+        //public List<Cart> Carts { get; set; } = new List<Cart>();
+        //public long Quantity { get; set; }
+        //public string MedicineName { get; set; }
+        //public string BatchCode { get; set; }
+        public string OrderNumber { get; set; }
+        public string OrderStatus { get; set; }
     }
 }

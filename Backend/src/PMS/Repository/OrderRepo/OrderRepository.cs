@@ -20,7 +20,8 @@ namespace PMS.Repository.OrderRepo
 
         public Order GetCurrentOrder(long userId)
         {
-            return _context.Orders.SingleOrDefault(o => o.UserId == userId && o.finalized == false);
+            return null;
+            //return _context.Orders.SingleOrDefault(o => o.UserId == userId && o.finalized == false);
         }
 
         public void GetSalesReport()
@@ -64,16 +65,18 @@ namespace PMS.Repository.OrderRepo
                         Medicine = new Medicine { PricePerUnit = m.PricePerUnit } }
                 ).ToList();*/
 
-            return _context.Carts.Include(c => c.Order)
-                .Include(c => c.Medicine)
-                .Where(c => c.Order.finalized == true && c.Created.Month == DateTime.Now.Month  && c.Created.Month == DateTime.Now.Year )
-                .Select(c => new Cart
-                {
-                    Id = c.Id,
-                    Quantity = c.Quantity,
-                    Created = c.Created,
-                    Medicine = new Medicine { PricePerUnit = c.Medicine.PricePerUnit }
-                }).ToList();
+            //return _context.Carts.Include(c => c.Order)
+            //    .Include(c => c.Medicine)
+            //    .Where(c => c.Order.finalized == true && c.Created.Month == DateTime.Now.Month  && c.Created.Month == DateTime.Now.Year )
+            //    .Select(c => new Cart
+            //    {
+            //        Id = c.Id,
+            //        Quantity = c.Quantity,
+            //        Created = c.Created,
+            //        Medicine = new Medicine { PricePerUnit = c.Medicine.PricePerUnit }
+            //    }).ToList();
+
+            return null;
         }
     }
 }

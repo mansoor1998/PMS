@@ -39,7 +39,7 @@ namespace PMS.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet("all")]
-        public AsyncListDto<CreateCompanyDto> GetAllCompanies([FormQuery] int? skip, [FormQuery] int? max, [FormQuery] string? search = null)
+        public AsyncListDto<CreateCompanyDto> GetAllCompanies([FormQuery] int? skip, [FormQuery] int? max, [FormQuery] string search = null)
         {   
             var companiesAsync = _repository.GetAll(skip, max, 
                 x => x.Name.Contains(search != null ? search : "") || x.Description.Contains(search != null ? search : ""));
@@ -94,23 +94,23 @@ namespace PMS.Controllers
         public string RandomFunction()
         {
 
-            Response.OnCompleted(ContextCall);
+            //Response.OnCompleted(ContextCall);
 
 
             return "This has been returned";
 
         }
 
-        private async Task ContextCall()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                var a = new MedicalCompany();
-                a.Name = "random";
-                a.UserId = 3;
-                _context.MedicalCompanies.Add(a);
-            }
-            _context.SaveChanges();
-        }
+        //private async Task ContextCall()
+        //{
+        //    for (int i = 0; i < 1000; i++)
+        //    {
+        //        var a = new MedicalCompany();
+        //        a.Name = "random";
+        //        a.UserId = 3;
+        //        _context.MedicalCompanies.Add(a);
+        //    }
+        //    _context.SaveChanges();
+        //}
     }
 }

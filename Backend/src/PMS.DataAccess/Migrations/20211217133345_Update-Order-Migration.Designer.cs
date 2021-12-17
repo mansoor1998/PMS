@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PMS.DataAccess.DataAccess;
@@ -9,9 +10,10 @@ using PMS.DataAccess.DataAccess;
 namespace PMS.DataAccess.Migrations
 {
     [DbContext(typeof(PMSContext))]
-    partial class PMSContextModelSnapshot : ModelSnapshot
+    [Migration("20211217133345_Update-Order-Migration")]
+    partial class UpdateOrderMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,9 +154,6 @@ namespace PMS.DataAccess.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("OrderNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("OrderStatus")
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Updated")

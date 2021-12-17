@@ -9,12 +9,12 @@ namespace PMS.DataAccess.Models
     public class Cart : CustomEntity, IEntity
     {
         [Required]
-        public double Quantity { get; set; }
+        public long Quantity { get; set; }
         // fluent API required
         [Required]
         public long OrderId { get; set; }
-        [ForeignKey("OrderId")]
-        public Order Order { get; set; }
+        //[ForeignKey("OrderId")]
+        //public Order Order { get; set; }
         // fluent API required.
         [Required]
         public long MedicineId { get; set; }

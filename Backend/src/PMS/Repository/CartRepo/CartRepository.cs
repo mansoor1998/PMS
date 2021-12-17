@@ -19,20 +19,22 @@ namespace PMS.Repository.CartRepo
 
         public bool VerifyUserCart(long userId, long cartId)
         {
-            int result = _context.Users
-                .Join(
-                    _context.Orders,
-                    user => user.Id,
-                    order => order.UserId,
-                    (user, order) => new { userId = user.Id, orderId = order.Id, order.finalized }
-                ).Join(
-                    _context.Carts,
-                    combined => combined.orderId,
-                    carts => carts.OrderId,
-                    (combined, carts) => new { userId = combined.userId, cartId = carts.Id, combined.finalized }
-                ).Where( r =>  r.userId == userId && r.cartId == cartId && r.finalized == false ).Count();
+            //int result = _context.Users
+            //    .Join(
+            //        _context.Orders,
+            //        user => user.Id,
+            //        order => order.UserId,
+            //        (user, order) => new { userId = user.Id, orderId = order.Id, order.finalized }
+            //    ).Join(
+            //        _context.Carts,
+            //        combined => combined.orderId,
+            //        carts => carts.OrderId,
+            //        (combined, carts) => new { userId = combined.userId, cartId = carts.Id, combined.finalized }
+            //    ).Where( r =>  r.userId == userId && r.cartId == cartId && r.finalized == false ).Count();
 
-            return (result > 0) ? true : false;
+            //return (result > 0) ? true : false;
+
+            return true;
         }
 
         public List<Cart> GetAllCarts(long userId)

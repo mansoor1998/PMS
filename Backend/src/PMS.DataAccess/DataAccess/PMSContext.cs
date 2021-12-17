@@ -21,11 +21,11 @@ namespace PMS.DataAccess.DataAccess
 
 
             // Cart Model Config
-            modelBuilder.Entity<Cart>()
-                .HasOne(c => c.Order)
-                .WithMany(o => o.Carts)
-                .HasForeignKey(c => c.OrderId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Cart>()
+            //    .HasOne(c => c.Order)
+            //    //.WithMany(o => o.Carts)
+            //    //.HasForeignKey(c => c.OrderId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Cart>()
                 .HasOne(c => c.Medicine)
@@ -47,7 +47,8 @@ namespace PMS.DataAccess.DataAccess
         public DbSet<MedicalCompany> MedicalCompanies { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Cart> Carts { get; set; }
-        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        //public DbSet<Invoice> Invoices { get; set; }
         #endregion
 
     }
