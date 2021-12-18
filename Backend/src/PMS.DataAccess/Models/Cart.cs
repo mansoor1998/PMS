@@ -11,8 +11,6 @@ namespace PMS.DataAccess.Models
         [Required]
         public long Quantity { get; set; }
         // fluent API required
-        [Required]
-        public long OrderId { get; set; }
         //[ForeignKey("OrderId")]
         //public Order Order { get; set; }
         // fluent API required.
@@ -20,5 +18,9 @@ namespace PMS.DataAccess.Models
         public long MedicineId { get; set; }
         [ForeignKey("MedicineId")]
         public Medicine Medicine { get; set; }
+
+        public long UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

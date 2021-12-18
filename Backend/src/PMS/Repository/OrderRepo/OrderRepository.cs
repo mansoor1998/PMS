@@ -18,35 +18,41 @@ namespace PMS.Repository.OrderRepo
             _context = context;
         }
 
-        public Order GetCurrentOrder(long userId)
+        public Order GetCurrentOrder(long id)
         {
+            //_context.Orders.Where(o => o.Id == id).Include(x => x.);
+
             return null;
-            //return _context.Orders.SingleOrDefault(o => o.UserId == userId && o.finalized == false);
         }
 
-        public void GetSalesReport()
+        public List<Order> GetSalesReport(DateTime from, DateTime to)
         {
             /*_context.Carts.Join(
                 _context.Orders,
                 );*/
-            _context.Orders.Join(
-               _context.Carts,
-               order => order.Id,
-               cart => cart.OrderId,
-               (order, cart) => new { order, cart }
-            ).Join(
-                _context.Medicines,
-                c => c.cart.MedicineId,
-                m => m.Id,
-                (combine, medicine) => new { combine , medicine }
-               ).GroupBy( x => new { x.combine.order.Id, x.combine.order.UserId } ).Select(
-                    r => new
-                    {
-                        id = r.Key.Id,
-                        userId = r.Key.UserId,
-                        amount = r.Sum( a => a.combine.cart.Quantity * a.medicine.PricePerUnit )
-                    }
-                )  ;
+
+            //_context.Orders.Join(
+            //   _context.Carts,
+            //   order => order.Id,
+            //   cart => cart.OrderId,
+            //   (order, cart) => new { order, cart }
+            //).Join(
+            //    _context.Medicines,
+            //    c => c.cart.MedicineId,
+            //    m => m.Id,
+            //    (combine, medicine) => new { combine , medicine }
+            //   ).GroupBy( x => new { x.combine.order.Id, x.combine.order.UserId } ).Select(
+            //        r => new
+            //        {
+            //            id = r.Key.Id,
+            //            userId = r.Key.UserId,
+            //            amount = r.Sum( a => a.combine.cart.Quantity * a.medicine.PricePerUnit )
+            //        }
+            //    )  ;
+
+            return _context.Orders.
+                Where(x => from.Date.Date <= x.Created.Date && to.Date.Date >= x.Created.Date)
+                .Include(x => x.OrderItems).ToList();
         }
 
         public List<Cart> GetWidgetData()
@@ -76,7 +82,20 @@ namespace PMS.Repository.OrderRepo
             //        Medicine = new Medicine { PricePerUnit = c.Medicine.PricePerUnit }
             //    }).ToList();
 
+            _context.MedicalCompanies.Count();
+            _context.Medicines.Count();
+            _context.Orders.Count();
+            // last month
+            _context.Orders.Where(x => DateTime.Now.Date  <= x.Created && DateTime.Now.Date.AddMonths(-1) >= x.Created);
+            // today.
+            _context.Orders.Where(x => DateTime.Now.Date == x.Created);
+            _context.Orders.Where(x => DateTime.Now.Date <= x.Created && DateTime.Now.Date.AddHours(-168) >= x.Created);
+
+
+
             return null;
         }
+
+       
     }
 }

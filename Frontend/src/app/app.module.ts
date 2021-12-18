@@ -29,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -49,6 +51,7 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
     AddPharmacistComponent,
     AddCompanyComponent,
     UpdatePasswordComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,

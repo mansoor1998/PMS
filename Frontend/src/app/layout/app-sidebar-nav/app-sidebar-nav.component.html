@@ -12,19 +12,11 @@
           </a>
         </li>
         <li>
-          <a [routerLink]="['/app']" matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+          <a [routerLink]="['/app/invoice-search']" matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
             <i>
               <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">assignment</mat-icon>
             </i>
             <span>Invoice Search</span>
-          </a>
-        </li>
-        <li>
-          <a matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
-            <i>
-              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon>
-            </i>
-            <span>Inventory</span>
           </a>
         </li>
         <li>
@@ -52,11 +44,19 @@
           </a>
         </li>
         <li>
-          <a matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+          <a matRipple [routerLink]="['/app/sales-report']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
             <i>
               <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">article</mat-icon>
             </i>
             <span>Sales Report</span>
+          </a>
+        </li>
+        <li>
+          <a matRipple [routerLink]="['/app/cart']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon>
+            </i>
+            <span>Cart</span>
           </a>
         </li>
         <!---->

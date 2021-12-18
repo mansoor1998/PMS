@@ -10,6 +10,7 @@ import {AppSessionDto} from './shared/services/users/user.dto';
 import {AppConst} from './shared/AppConst';
 import {debounce, debounceTime} from 'rxjs/operators';
 import { UserService } from './shared/services/users/user.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 // tslint:disable-next-line:typedef
@@ -28,7 +29,7 @@ function appInitializerFactory(injector: Injector, platformLocation: PlatformLoc
         const sub = userService.getUserConfiguration().subscribe((data: AppSessionDto) => {
           if (data != null){
             const session = framework.session;
-            session.userId = data.userId;
+            session.UserId = data.userId;
             session.AllRoles = data.allRoles;
             session.Name = data.name;
             session.Username = data.username;
@@ -57,7 +58,9 @@ function appInitializerFactory(injector: Injector, platformLocation: PlatformLoc
     BrowserModule,
     RootRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+
   ],
   providers: [
     {

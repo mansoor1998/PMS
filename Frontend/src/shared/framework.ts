@@ -15,8 +15,8 @@ export class Framework{
   }
 
   public message: Popup = Popup.getInstance(this.injector) as Popup;
-  public preLoader: any = PreLoader.getInstance(this.injector);
-  public session: any = AppSession.getInstance(this.injector);
+  public preLoader: PreLoader = PreLoader.getInstance(this.injector);
+  public session: AppSession = AppSession.getInstance(this.injector);
 
 }
 
@@ -147,7 +147,7 @@ class PreLoader extends ComponentFactory<PreLoaderComponent> {
 
 }
 
-class AppSession {
+export class AppSession {
 
   private constructor(private injector: Injector) {
   }
@@ -158,6 +158,14 @@ class AppSession {
 
   get Username(): string{
     return this.username;
+  }
+
+  get Name(): string {
+    return this.name;
+  }
+
+  get RoleName(): string{
+    return this.roleName;
   }
 
   set UserId(userId: number){
@@ -232,6 +240,11 @@ class AppSession {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   }
 
+}
+
+export class Roles {
+  public static PHARMACIST: string = 'Pharmacist';
+  public static ADMIN: string = 'ADMIN';
 }
 
 

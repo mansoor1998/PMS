@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { timeStamp } from 'console';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
+import { AppSession, Framework, Roles } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
 import { CreateMedicineDto } from 'src/shared/services/medicine/medicine.dto';
 import { MedicineService } from 'src/shared/services/medicine/medicine.service';
+import { OrderService } from 'src/shared/services/order/order.service';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-medicine',
@@ -15,11 +18,18 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 })
 export class MedicineComponent extends PageListingComponentBase<CreateMedicineDto> implements OnInit {
 
-
+  public Roles = Roles;
   public medicines: Array<CreateMedicineDto> = [];
+  public appSession: AppSession;
+  @ViewChildren('qty') quantities!: QueryList<any>;
 
-  constructor(private medicineService: MedicineService, private dialog: MatDialog) {  
+  constructor(private medicineService: MedicineService, 
+    private dialog: MatDialog, private framework: Framework, 
+    private orderSerice: OrderService, private toastr: ToastrService,
+    private ref: ChangeDetectorRef
+    ) {  
     super();
+    this.appSession = this.framework.session;
   }
 
   ngOnInit(): void {
@@ -28,11 +38,14 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
       total: number,
       arrayList: CreateMedicineDto[]
     }) => {
-      // console.log (data);
+      console.log (data);
       this.medicines = data.arrayList;
       this.total = data.total;
       this.busy = false;
     }, (err) => { this.busy = false; });
+  }
+
+  ngAfterViewInit(){
   }
 
   public addOrEdit(entity: CreateMedicineDto = null){
@@ -82,6 +95,22 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
     }, () => {
       this.busy = false;
     });
+  }
+
+
+  public addToCart(index: number){
+
+    let id = this.medicines[index].id;
+    const quantity = parseInt(this.quantities.toArray()[index].nativeElement.value);
+    if(quantity > 0){
+      this.orderSerice.addToCart({ medicineId: id, quantity: quantity }).subscribe((result: CreateMedicineDto) => {
+        if(result) { this.medicines[index].qunatity = result.qunatity; this.refresh(); }
+        this.quantities.toArray()[index].nativeElement.value = '0';
+        this.toastr.success('added to the cart');
+      });
+    } else { 
+      this.toastr.error('add the quantity');
+    }
   }
 
 }

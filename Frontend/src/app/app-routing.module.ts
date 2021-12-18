@@ -7,6 +7,9 @@ import { CompanyComponent } from './company/company.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { CartComponent } from './cart/cart.component';
+import { InvoiceSearchComponent } from './invoice-search/invoice-search.component';
+import { SalesReportComponent } from './sales-report/sales-report.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,21 @@ const routes: Routes = [
       {
         path: 'update-password',
         component: UpdatePasswordComponent,
+        canActivate: [AuthRouteGuard]
+      },
+      {
+        path: 'cart',
+        component: CartComponent,
+        canActivate: [AuthRouteGuard]
+      },
+      {
+        path: 'invoice-search',
+        component: InvoiceSearchComponent,
+        canActivate: [AuthRouteGuard]
+      },
+      {
+        path: 'sales-report',
+        component: SalesReportComponent,
         canActivate: [AuthRouteGuard]
       }
     ],

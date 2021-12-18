@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PMS.DataAccess.DataAccess;
@@ -9,9 +10,10 @@ using PMS.DataAccess.DataAccess;
 namespace PMS.DataAccess.Migrations
 {
     [DbContext(typeof(PMSContext))]
-    partial class PMSContextModelSnapshot : ModelSnapshot
+    [Migration("20211217163925_UserId forigen-key adding in the migration")]
+    partial class UserIdforigenkeyaddinginthemigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +35,9 @@ namespace PMS.DataAccess.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<long>("MedicineId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("OrderId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("Quantity")
@@ -119,8 +124,8 @@ namespace PMS.DataAccess.Migrations
                     b.Property<double>("PricePerUnit")
                         .HasColumnType("double precision");
 
-                    b.Property<long>("Quantity")
-                        .HasColumnType("bigint");
+                    b.Property<double>("Quantity")
+                        .HasColumnType("double precision");
 
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp without time zone");

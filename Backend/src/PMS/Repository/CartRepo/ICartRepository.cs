@@ -10,5 +10,9 @@ namespace PMS.Repository.CartRepo
     {
         public bool VerifyUserCart(long userId, long cartId);
         public List<Cart> GetAllCarts(long userId);
+
+        public Cart GetByMedicineId(long id, long? userId);
+        public void DeleteBulk(List<Cart> carts);
+
     }
 }

@@ -73,14 +73,6 @@ namespace PMS.Repository
             _context.SaveChanges();
         }
 
-        public void Delete(long id)
-        {
-            TEntity entity = (TEntity) Activator.CreateInstance( typeof(TEntity), new object { } );
-            entity.Id = id;
-            _context.Set<TEntity>().Remove(entity);
-            _context.SaveChanges();
-        }
-
         /*
          * Attach the object to database and Set IsDelted to True
          */

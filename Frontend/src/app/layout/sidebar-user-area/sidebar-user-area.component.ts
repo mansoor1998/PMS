@@ -8,9 +8,16 @@ import {Framework} from '../../../shared/framework';
 })
 export class SidebarUserAreaComponent implements OnInit {
 
+  public name: string = ''; 
+  public username: string = '';
+
+
   constructor(private framework: Framework) { }
 
   ngOnInit(): void {
+    const {Name: name, Username: username } =  this.framework.session;
+    this.name = name;
+    this.username = username;
   }
 
   logout(event: MouseEvent): void {

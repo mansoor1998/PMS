@@ -12,7 +12,6 @@ namespace PMS.Repository
         public T GetById(long Id);
         public void Update(T entity);
         public void Delete(T entity);
-        public void Delete(long id);
         public void SoftDelete(long Id);
         public AsyncList<T> GetAllIncluding(System.Linq.Expressions.Expression<Func<T, object>> navigationType, int? SkipCount = null, int? MaxResultCount = null, System.Linq.Expressions.Expression<Func<T, bool>> searchFilter = null);
     }

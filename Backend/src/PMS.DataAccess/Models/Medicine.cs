@@ -14,7 +14,7 @@ namespace PMS.DataAccess.Models
         public string BatchCode { get; set; }
         public DateTime MGFDate { get; set; }
         public DateTime ExpiryDate { get; set; }
-        public double Quantity { get; set; }
+        public long Quantity { get; set; }
         public double PricePerUnit { get; set; }
         public long? MedicalCompanyId { get; set; }
         [ForeignKey("MedicalCompanyId")]

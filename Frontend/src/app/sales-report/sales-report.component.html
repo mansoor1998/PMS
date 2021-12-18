@@ -1,1 +1,47 @@
-<p>sales-report works!</p>
+<div class="card w-100 shadow" [@routerTransition]>
+    <div class="card-body">
+        <div class="head mb-3">
+            <form [formGroup]="date" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label>From</label>
+                        <input type="date" formControlName="from" class="form-control m-1" [ngClass]="{ 'input-error':  _from?.invalid && _from?.touched }">
+                    </div>
+                    <div class="form-group col-6">
+                        <label>To</label>
+                        <input type="date" formControlName="to" class="form-control m-1" [ngClass]="{ 'input-error':  _to?.invalid && _to?.touched }">
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="body">
+            <table [busy]="busy" class="PMS-table table">
+                <thead>
+                  <tr>
+                    <th class="col-3">Medicine Name</th>
+                    <th class="col-3">Quantity</th>
+                    <th class="col-3">Price Per Unit</th>
+                    <th class="col-3">Order Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let report of reportData let i=index;">
+                        <tr *ngFor="let orderItem of report?.orderItems">
+                            <td>{{orderItem?.medicineName}}</td>                        
+                            <td>
+                                {{orderItem?.quantity}}
+                            </td>
+                            <td>
+                                {{orderItem?.pricePerUnit}}
+                            </td>
+                            <td>{{report?.orderNumber}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>

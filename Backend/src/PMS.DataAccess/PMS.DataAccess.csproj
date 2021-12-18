@@ -37,6 +37,8 @@
     <Compile Remove="Migrations\20211206115100_Identity-Autoincrement.Designer.cs" />
     <Compile Remove="Migrations\20211206115316_Identity-Autoincrement.cs" />
     <Compile Remove="Migrations\20211206115316_Identity-Autoincrement.Designer.cs" />
+    <Compile Remove="Migrations\20211218161348_quantities.cs" />
+    <Compile Remove="Migrations\20211218161348_quantities.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

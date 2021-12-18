@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import { Framework } from 'src/shared/framework';
 import {SideBar} from '../../../shared/sidebar';
 
 @Component({
@@ -7,6 +8,7 @@ import {SideBar} from '../../../shared/sidebar';
   styleUrls: ['./app-sidebar-nav.component.css']
 })
 export class AppSidebarNavComponent implements OnInit {
+
 
   constructor(private host: ElementRef<HTMLElement>) { }
 

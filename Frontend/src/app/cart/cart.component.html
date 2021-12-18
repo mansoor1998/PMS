@@ -1,0 +1,68 @@
+<div class="card w-100 shadow" [@routerTransition]>
+    <div class="card-body">
+
+        <h3>Your Cart</h3>
+        <div class="form-group" style="width: 300px;">
+            <label>Customer Name</label>
+            <input [(ngModel)]="customerName" type="text" class="form-control" > 
+        </div>
+        <!-- <div class="head">
+            <div class="input-group input-group-sm mb-3 d-flex align-items-center">
+                <input [(ngModel)]="search" type="text" class="form-control m-1" placeholder="Search...">
+                <button (click)="refresh(true)" class="btn btn-primary">Search</button>
+            </div>
+        </div> -->
+
+        <div class="body">
+            <div class="table-content">
+                <div class="table-responsive table-wrapper table-scrollbar">
+                  <table [busy]="busy" class="PMS-table table">
+                    <thead>
+                      <tr>
+                        <th class="col-4">Medicine Name</th>
+                        <th class="col-2">Quantity</th>
+                        <th class="col-2">PricePerUnit</th>
+                        <th class="col-2">Total</th>  
+                        <th class="col-2"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of carts | paginate: { id: 'carts',
+                                      itemsPerPage: pageSize,
+                                      currentPage: pageNumber,
+                                      totalItems: total }; let i=index;">
+                        <td>{{item.medicineName}}</td>                        
+                        <td>
+                            {{item.medicineQuantity}}
+                        </td>
+                        <td>
+                            {{item.medicinePricePerUnit}}
+                        </td>
+                        <td>
+                            {{item.medicineQuantity * item.medicinePricePerUnit}}
+                        </td>
+                        
+                        <td>
+                            <span class="cursor-pointer user-select-none" [matMenuTriggerFor]="asd" aria-label="Example icon-button with a menu">
+                                <mat-icon>menu</mat-icon>
+                            </span>
+                            <mat-menu #asd="matMenu">
+                                <button (click)="delete(item)" mat-menu-item>
+                                <span>Delete</span>
+                                </button>
+                            </mat-menu>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>      
+
+              <div class="d-flex justify-content-end">
+                <pagination-controls id="carts" reponsive="true" (pageChange)="onPageChange($event)"></pagination-controls>
+              </div>
+        </div>
+
+        <button (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    </div>
+</div>
