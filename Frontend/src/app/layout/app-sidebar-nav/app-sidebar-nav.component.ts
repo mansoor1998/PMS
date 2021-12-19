@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
-import { Framework } from 'src/shared/framework';
+import { AppSession, Framework } from 'src/shared/framework';
 import {SideBar} from '../../../shared/sidebar';
 
 @Component({
@@ -9,8 +9,11 @@ import {SideBar} from '../../../shared/sidebar';
 })
 export class AppSidebarNavComponent implements OnInit {
 
+  public session: AppSession;
 
-  constructor(private host: ElementRef<HTMLElement>) { }
+  constructor(private host: ElementRef<HTMLElement>, framework: Framework) {
+    this.session = framework.session;
+  }
 
   ngOnInit(): void {
   }

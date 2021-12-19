@@ -22,8 +22,11 @@
                   <tr>
                     <th class="col-3">Medicine Name</th>
                     <th class="col-3">Quantity</th>
-                    <th class="col-3">Price Per Unit</th>
+                    <th class="col-1">Price Per Unit</th>
                     <th class="col-3">Order Number</th>
+                    <ng-container *ngIf="session.isGranted('Admin')">
+                        <th class="col-2">User</th>
+                    </ng-container>
                   </tr>
                 </thead>
                 <tbody>
@@ -37,6 +40,9 @@
                                 {{orderItem?.pricePerUnit}}
                             </td>
                             <td>{{report?.orderNumber}}</td>
+                            <ng-container *ngIf="session.isGranted('Admin')">
+                                <td>{{report?.username}}</td>
+                            </ng-container>
                         </tr>
                     </ng-container>
                 </tbody>

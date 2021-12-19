@@ -19,12 +19,14 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
-        canActivate: [AuthRouteGuard]
+        canActivate: [AuthRouteGuard],
+        // data: { role: 'Admin' }
       },
       {
         path: 'company',
         component: CompanyComponent,
-        canActivate: [AuthRouteGuard]
+        canActivate: [AuthRouteGuard],
+        data: { role: 'Admin' }
       },
       {
         path: 'medicine',
@@ -34,7 +36,8 @@ const routes: Routes = [
       {
         path: 'pharmacist',
         component: PharmacistComponent,
-        canActivate: [AuthRouteGuard]
+        canActivate: [AuthRouteGuard],
+        data: { role: 'Admin' }
       },
       {
         path: 'update-password',
@@ -54,7 +57,8 @@ const routes: Routes = [
       {
         path: 'sales-report',
         component: SalesReportComponent,
-        canActivate: [AuthRouteGuard]
+        canActivate: [AuthRouteGuard],
+        // data: { role: 'Admin' }
       }
     ],
   }

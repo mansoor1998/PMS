@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
+import { AppSession, Framework } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
 import { CreateUserDto, GetUserDto } from 'src/shared/services/users/user.dto';
 import { UserService } from 'src/shared/services/users/user.service';
@@ -15,9 +16,11 @@ import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.componen
 export class PharmacistComponent extends PageListingComponentBase<GetUserDto> implements OnInit {
  
   public pharmacist: GetUserDto[] = [];
+  session: AppSession;
 
-  constructor(private userService: UserService, private dialog: MatDialog) {
+  constructor(private userService: UserService, private dialog: MatDialog, private framework: Framework) {
     super();
+    this.session = this.framework.session;
   }
 
   ngOnInit(): void {
@@ -27,7 +30,7 @@ export class PharmacistComponent extends PageListingComponentBase<GetUserDto> im
       this.pharmacist = data.arrayList;
       this.total = data.total;
       this.busy = false;
-    }, (err) => { this.busy = false; })
+    }, (err) => { this.busy = false; });
   }
 
   

@@ -77,7 +77,7 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
 
     this.medicineService.delete(entity.id).subscribe(() => {
       if ( (this.total - 1) < (this.pageNumber - 1) * this.pageSize + 1 ) this.pageNumber --;
-      this.refresh();
+      this.refresh(true);
     });
   }
 

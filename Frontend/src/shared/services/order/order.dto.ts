@@ -10,9 +10,10 @@ export class GetCartDto {
 }
 
 export class GetOrderDto {
-    public customerName;
-    public orderNumber;
-    public orderStatus;
+    public customerName: string;
+    public orderNumber: string;
+    public orderStatus: string;
+    public username: string;
     public orderItems: GetOrderItemDto[];
 
 }

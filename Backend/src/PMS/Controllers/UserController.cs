@@ -17,7 +17,8 @@ using PMS.Repository.UserRepo;
 
 namespace PMS.Controllers
 {
-    [Authorize(Roles = "Admin")]
+
+    [Authorize(Roles = "Pharmacist,Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -66,6 +67,7 @@ namespace PMS.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public bool CreateUser(CreateUserDto user)
         {
@@ -128,6 +130,8 @@ namespace PMS.Controllers
 
             return appSession;
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public AsyncListDto<GetUserDto> GetAllUsers([FormQuery] int? skip = null, [FormQuery] int? max = null, [FormQuery] string search = null)
         {
@@ -147,7 +151,7 @@ namespace PMS.Controllers
             return new AsyncListDto<GetUserDto>() { total = usersAsync.total, ArrayList = usersDto }; ;
         }
 
-        [HttpPost("ChangePassword")]
+        [HttpPost("change-password")]
         public void ChangePassword(ChangePassword changePassword)
         {
             long userId = 0;

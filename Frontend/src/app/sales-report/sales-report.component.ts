@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
+import { AppSession, Framework } from 'src/shared/framework';
 import { GetOrderDto } from 'src/shared/services/order/order.dto';
 import { OrderService } from 'src/shared/services/order/order.service';
 
@@ -18,7 +19,11 @@ export class SalesReportComponent implements OnInit {
 
   public reportData: GetOrderDto[] = [];
 
-  constructor(private fb: FormBuilder, private orderService: OrderService) { }
+  public session:AppSession;
+
+  constructor(private fb: FormBuilder, private orderService: OrderService, framwork: Framework) {
+    this.session = framwork.session;
+  }
 
   ngOnInit(): void {
     this.date = this.fb.group({

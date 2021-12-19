@@ -63,7 +63,7 @@ export class UserService {
   }
 
   public changePassword(changePassword: ChangePassword){
-    return this.http.post(this.REMOTE_BASE_URL + `/api/user/ChangePassword`, changePassword , { headers: this.headers });
+    return this.http.post(this.REMOTE_BASE_URL + `/api/user/change-password`, changePassword , { headers: this.headers });
   }
 
 

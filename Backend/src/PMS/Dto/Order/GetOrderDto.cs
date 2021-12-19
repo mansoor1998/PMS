@@ -10,6 +10,7 @@ namespace PMS.Dto.Order
         public string CustomerName { get; set; }
         public string OrderNumber { get; set; }
         public string OrderStatus { get; set; }
+        public string Username { get; set; }
         public List<GetOrderItemDto> OrderItems { get; set; }
     }
 }

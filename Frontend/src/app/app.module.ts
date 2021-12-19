@@ -31,6 +31,7 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
+import {Chart, registerables} from 'chart.js';
 
 
 
@@ -71,4 +72,7 @@ import { CartComponent } from './cart/cart.component';
   providers: []
 })
 export class AppModule {
+  constructor() {
+    Chart.register(...registerables);
+  }
 }

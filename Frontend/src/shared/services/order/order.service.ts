@@ -51,4 +51,12 @@ export class OrderService {
         return this.http.post(this.REMOTE_BASE_URL + `/api/order/report`, date, {headers: this.headers}) as Observable<GetOrderDto[]>;   
     }
 
+    public getWidgetsData(){
+        return this.http.get(this.REMOTE_BASE_URL + `/api/order/widgets-data`, {headers: this.headers});
+    }
+
+    public getDailySales() : Observable<{ created: Date, count: number }[]> {
+        return this.http.get(this.REMOTE_BASE_URL + '/api/order/daily-sales', { headers: this.headers }) as Observable<{ created: Date, count: number }[]>;
+    }
+
 }

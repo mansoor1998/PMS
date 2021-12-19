@@ -1,15 +1,17 @@
 <div class="row" style="font-family: BalsamiqSans; color: rgb(255, 255, 255); padding-top: 0px; opacity: 1;" [@routerTransition]>
-  <div class="col-md-4 col-sm-6 col-12 column-body">
-    <div class="card" style="background-color: #468dd2;">
-      <div class="card-body">
-        <div class="d-flex justify-content-between">
-          <h4 class="card-title" style="margin-bottom: 2px;">Total Pharmacist</h4>
-          <mat-icon role="img" class="mat-icon">person_add</mat-icon>
+  <ng-container *ngIf="session.isGranted('Admin')">
+    <div class="col-md-4 col-sm-6 col-12 column-body">
+      <div class="card" style="background-color: #468dd2;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h4 class="card-title" style="margin-bottom: 2px;">Total Pharmacist</h4>
+            <mat-icon role="img" class="mat-icon">person_add</mat-icon>
+          </div>
+          <h3 style="margin-bottom: 0px;">{{ widgetsData?.userCount }}</h3>
         </div>
-        <h3 style="margin-bottom: 0px;">120</h3>
       </div>
     </div>
-  </div>
+  </ng-container>
   <div class="col-md-4 col-sm-6 col-12 column-body">
     <div class="card" style="background-color: #62cf62;">
       <div class="card-body">
@@ -17,7 +19,7 @@
           <h4 class="card-title" style="margin-bottom: 2px;">Total Medicines</h4>
           <mat-icon class="mat-icon">medical_services</mat-icon>
         </div>
-        <h3 style="margin-bottom: 0px;">120</h3>
+        <h3 style="margin-bottom: 0px;">{{ widgetsData?.medicinesCount }}</h3>
       </div>
     </div>
   </div>
@@ -28,7 +30,7 @@
           <h4 class="card-title " style="margin-bottom: 2px;">Total Companies</h4>
           <mat-icon role="img" class="mat-icon notranslate  material-icons mat-icon-no-color" aria-hidden="true">business</mat-icon>
         </div>
-        <h3 style="margin-bottom: 0px;">120</h3>
+        <h3 style="margin-bottom: 0px;">{{ widgetsData?.medicalCompaniesCount }}</h3>
       </div>
     </div>
   </div>
@@ -39,7 +41,7 @@
           <h4  class="card-title " style="margin-bottom: 2px;">Total Sales</h4>
           <mat-icon  role="img" class="mat-icon notranslate  material-icons mat-icon-no-color" aria-hidden="true">attach_money</mat-icon>
         </div>
-        <h3  style="margin-bottom: 0px;" class="">120</h3>
+        <h3  style="margin-bottom: 0px;" class="">{{ widgetsData?.orderCount }}</h3>
       </div>
     </div>
   </div>
@@ -50,7 +52,7 @@
           <h4  class="card-title " style="margin-bottom: 2px;">Weekly Sales</h4>
           <mat-icon  role="img" class="mat-icon notranslate  material-icons mat-icon-no-color" aria-hidden="true">attach_money</mat-icon>
         </div>
-        <h3  style="margin-bottom: 0px;" class="">120</h3>
+        <h3  style="margin-bottom: 0px;" class="">{{ widgetsData?.weeklyOrderCount }}</h3>
       </div>
     </div>
   </div>
@@ -61,7 +63,7 @@
           <h4 class="card-title " style="margin-bottom: 2px;">Daily Sales</h4>
           <mat-icon class="mat-icon">attach_money</mat-icon>
         </div>
-        <h3 style="margin-bottom: 0px;" >120</h3>
+        <h3 style="margin-bottom: 0px;" >{{ widgetsData?.dailyOrderCount }}</h3>
       </div>
     </div>
   </div>
@@ -69,7 +71,7 @@
 
 <div [busy]="false" class="table-content">
   <div class="table-responsive table-wrapper table-scrollbar">
-    <table class="PMS-table table">
+    <!-- <table class="PMS-table table">
       <thead>
         <tr>
           <th class="col-3">Name</th>
@@ -106,16 +108,12 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+    <div class="col-md-6">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+
   </div>
-</div>
-
-
-
-
-
-<div style="background-color: blanchedalmond;">
-  <pagination-controls class="float-right" id="items" reponsive="true" (pageChange)="currentPage = $event"></pagination-controls>
 </div>
 
 

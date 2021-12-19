@@ -107,7 +107,7 @@ namespace PMS.Controllers
                 orderItem.MedicineName = carts[i].Medicine.Name;
                 orderItem.BatchCode = carts[i].Medicine.BatchCode;
                 orderItem.PricePerUnit = carts[i].Medicine.PricePerUnit;
-                orderItem.Quantity = carts[i].Medicine.Quantity;
+                orderItem.Quantity = carts[i].Quantity;
 
                 orderItems.Add(orderItem);
             }
@@ -125,6 +125,12 @@ namespace PMS.Controllers
             {
                 OrderNumber = order.OrderNumber
             };
+        }
+
+        [HttpGet("widgets-data")]
+        public GetWidgetsData GetWidgetsData()
+        {
+            return _orderRepository.GetWidgetData();
         }
 
         [HttpGet("{orderNumber}")]
@@ -173,7 +179,7 @@ namespace PMS.Controllers
         [HttpGet("history")]
         public List<Cart> ShowOrderHistory()
         {
-            return _orderRepository.GetWidgetData();
+            return null;
         }
 
         [HttpGet("carts")]
@@ -219,8 +225,9 @@ namespace PMS.Controllers
         {
             DateTime from = date.From;
             DateTime to = date.To;
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
 
-            List<Order> orders  = _orderRepository.GetSalesReport(from, to);
+            List<Order> orders  = _orderRepository.GetSalesReport(from, to, (userRole == "Admin") ? true : false);
 
             List<GetOrderDto> orderDto = new List<GetOrderDto>();
             for (int i = 0; i < orders.Count; i++)
@@ -228,6 +235,7 @@ namespace PMS.Controllers
                 var orderRef = new GetOrderDto();
                 orderRef.OrderItems = new List<GetOrderItemDto>();
                 Utility.Copier<Order, GetOrderDto>.Copy(orders[i], orderRef);
+                orderRef.Username = orders[i]?.User?.Username;
                 for(int j = 0; j < orders[i].OrderItems.Count; j++)
                 {
                     var orderItemRef = new GetOrderItemDto();
@@ -240,6 +248,12 @@ namespace PMS.Controllers
 
 
             return orderDto;
+        }
+
+        [HttpGet("daily-sales")]
+        public List<SaleCount> GetSaleArchive()
+        {
+            return _orderRepository.GetDailySales();
         }
 
         //[HttpDelete("cart/{id}")]

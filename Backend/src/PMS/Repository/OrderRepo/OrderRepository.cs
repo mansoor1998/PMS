@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using PMS.DataAccess.DataAccess;
 using PMS.DataAccess.Models;
+using PMS.Dto.Order;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace PMS.Repository.OrderRepo
             return null;
         }
 
-        public List<Order> GetSalesReport(DateTime from, DateTime to)
+        public List<Order> GetSalesReport(DateTime from, DateTime to, bool getUserDetail = false)
         {
             /*_context.Carts.Join(
                 _context.Orders,
@@ -50,12 +51,15 @@ namespace PMS.Repository.OrderRepo
             //        }
             //    )  ;
 
-            return _context.Orders.
+            var sales = _context.Orders.
                 Where(x => from.Date.Date <= x.Created.Date && to.Date.Date >= x.Created.Date)
-                .Include(x => x.OrderItems).ToList();
+                .Include(x => x.OrderItems);
+            if (!getUserDetail) return sales.ToList();
+            return sales.Include(x => x.User).ToList();
+            
         }
 
-        public List<Cart> GetWidgetData()
+        public GetWidgetsData GetWidgetData()
         {
             /*return _context.Carts.Join(
                _context.Orders,
@@ -81,19 +85,36 @@ namespace PMS.Repository.OrderRepo
             //        Created = c.Created,
             //        Medicine = new Medicine { PricePerUnit = c.Medicine.PricePerUnit }
             //    }).ToList();
-
-            _context.MedicalCompanies.Count();
-            _context.Medicines.Count();
-            _context.Orders.Count();
+            int usersCount = _context.Users.Count();
+            int medicalCompaniesCount = _context.MedicalCompanies.Count();
+            int medicinesCount = _context.Medicines.Count();
+            int orderCount = _context.Orders.Count();
             // last month
-            _context.Orders.Where(x => DateTime.Now.Date  <= x.Created && DateTime.Now.Date.AddMonths(-1) >= x.Created);
+            int monthlyOrdersCount = _context.Orders.Where(x => DateTime.Now.Date.AddMonths(-1) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
             // today.
-            _context.Orders.Where(x => DateTime.Now.Date == x.Created);
-            _context.Orders.Where(x => DateTime.Now.Date <= x.Created && DateTime.Now.Date.AddHours(-168) >= x.Created);
+            int dailyOrderCount = _context.Orders.Where(x => DateTime.Now.Date == x.Created.Date).Count();
+            int weeklyOrderCount = _context.Orders
+                .Where(x => DateTime.Now.Date.AddHours(-168) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
 
+            GetWidgetsData widgetData = new GetWidgetsData();
 
+            widgetData.MedicalCompaniesCount = medicalCompaniesCount;
+            widgetData.MedicinesCount = medicinesCount;
+            widgetData.OrderCount = orderCount;
+            widgetData.MonthlyOrdersCount = monthlyOrdersCount;
+            widgetData.WeeklyOrderCount = weeklyOrderCount;
+            widgetData.DailyOrderCount = dailyOrderCount;
+            widgetData.UserCount = usersCount;
+            return widgetData;
+        }
 
-            return null;
+        public List<SaleCount> GetDailySales()
+        {
+            return _context.Orders.Where(x => DateTime.Now.Date >= x.Created.Date && x.Created.Date >= DateTime.Now.AddHours(-168)).GroupBy(x => x.Created.Date, (x, y) => new SaleCount()
+            {
+                Created = x.Date,
+                Count = y.Count()
+            }).ToList();
         }
 
        
