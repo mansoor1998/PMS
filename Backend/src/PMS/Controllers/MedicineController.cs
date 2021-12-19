@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PMS.DataAccess.Models;
 using PMS.Dto;
@@ -11,6 +12,7 @@ using PMS.Repository.MedicineRepo;
 namespace PMS.Controllers
 {
     //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Pharmacist,Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class MedicineController : ControllerBase
