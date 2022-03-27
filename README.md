@@ -1,2 +1,0 @@
-# PMS
-Pharmacy Management System. 
