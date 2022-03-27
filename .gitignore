@@ -1,0 +1,5 @@
+/Frontend/node_modules
+/Backend/src/.vs/**
+/Backend/src/PMS/bin
+/Backend/src/PMS.DataAccess/bin
+
