@@ -1,0 +1,51 @@
+
+<div>
+    <mat-icon class="float-right cursor-pointer" (click)="dialogRef.close()">
+        close
+    </mat-icon>
+</div>
+
+<!-- {{ medicine.value | json }} -->
+
+<form [formGroup]="medicine" (ngSubmit)="onSubmit()">
+    <h2>Add Comapny</h2>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'input-error':  _name?.invalid && _name?.touched }"> 
+    </div>
+
+    <div class="form-group">
+        <label>Batch Code</label>
+        <input type="text" class="form-control" formControlName="batchCode" [ngClass]="{ 'input-error':  _batchCode?.invalid && _batchCode?.touched }"> 
+      </div>
+
+      <div class="form-group">
+        <label>MGF Date</label>
+        <input type="date" class="form-control" formControlName="mgfDate" [value]="_mgfDate.value" [ngClass]="{ 'input-error':  _mgfDate?.invalid && _mgfDate?.touched }"> 
+      </div>
+
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="date" class="form-control" formControlName="expiryDate" [value]="_expiryDate.value" [ngClass]="{ 'input-error':  _expiryDate?.invalid && _expiryDate?.touched }"> 
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" class="form-control" formControlName="quantity" [ngClass]="{ 'input-error':  _quantity?.invalid && _quantity?.touched }"> 
+      </div>
+
+      <!-- {{_price?.value }} -->
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" min="0" class="form-control" formControlName="pricePerUnit" [ngClass]="{ 'input-error':  _price?.invalid && _price?.touched }"> 
+      </div>
+      
+      <div>
+        <label>Medical Company</label>
+        <select class="form-control" formControlName="medicalCompanyId" [ngClass]="{ 'input-error':  _medicalCompanyId?.invalid && _medicalCompanyId?.touched }">
+            <option *ngFor="let item of companies" [ngValue]="item.id">{{item.name}}</option>
+        </select>
+      </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+</form>

@@ -1,0 +1,6 @@
+<div class="dropdown-custom">
+  <ng-content select="i"></ng-content>
+  <div [@slideInOut] *ngIf="hidden">
+    <ng-content select="ul"></ng-content>
+  </div>
+</div>

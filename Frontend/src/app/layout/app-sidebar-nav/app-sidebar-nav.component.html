@@ -1,0 +1,71 @@
+
+<div class="app">
+  <div class="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a [routerLink]="['/app/home']" matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">home</mat-icon>
+            </i>
+            <span>home</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/app/invoice-search']" matRipple [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">assignment</mat-icon>
+            </i>
+            <span>Invoice Search</span>
+          </a>
+        </li>
+        <ng-container *ngIf="session.isGranted('Admin')">
+          <li>
+            <a matRipple [routerLink]="['/app/company']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+              <i>
+                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">business</mat-icon>
+              </i>
+              <span>Company</span>
+            </a>
+          </li>
+        </ng-container>
+        <li>
+          <a matRipple [routerLink]="['/app/medicine']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">medical_services</mat-icon>
+            </i>
+            <span>Medicine</span>
+          </a>
+        </li>
+        <ng-container *ngIf="session.isGranted('Admin')">
+          <li>
+            <a matRipple [routerLink]="['/app/pharmacist']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+              <i>
+                <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person_add</mat-icon>
+              </i>
+              <span>Pharmacist</span>
+            </a>
+          </li>
+        </ng-container>
+        <li>
+          <a matRipple [routerLink]="['/app/sales-report']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">article</mat-icon>
+            </i>
+            <span>Sales Report</span>
+          </a>
+        </li>
+        <li>
+          <a matRipple [routerLink]="['/app/cart']" [matRippleColor]="'#FFFFFF50'" class="mat-ripple">
+            <i>
+              <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon>
+            </i>
+            <span>Cart</span>
+          </a>
+        </li>
+        <!---->
+        <!---->
+      </ul>
+    </nav>
+  </div>
+</div>

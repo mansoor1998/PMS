@@ -1,0 +1,326 @@
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.dll
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfo.cs
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.RazorTargetAssemblyInfo.cache
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.exe
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.deps.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.dev.json
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.pdb
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.pdb
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CopyComplete
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.Manifest.cache
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.xml
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.dll
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Dell\source\repos\PMS\PMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\PMS\PMS\obj\Debug\netcoreapp3.1\PMS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.exe
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.deps.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.dev.json
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.pdb
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.pdb
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfo.cs
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.RazorTargetAssemblyInfo.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CopyComplete
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.Manifest.cache
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.xml
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.dll
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
+C:\Users\Dell\source\repos\PMS\src\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.exe
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.deps.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.dev.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.pdb
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.dll
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.pdb
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csprojAssemblyReference.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfoInputs.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfo.cs
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CoreCompileInputs.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.MvcApplicationPartsAssemblyInfo.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.RazorTargetAssemblyInfo.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CopyComplete
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.Manifest.cache
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.xml
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.dll
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
+E:\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+E:\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csprojAssemblyReference.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfoInputs.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfo.cs
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CoreCompileInputs.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.MvcApplicationPartsAssemblyInfo.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.exe
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.deps.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.dev.json
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.pdb
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.dll
+D:\Disk E\Projects\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.pdb
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.RazorTargetAssemblyInfo.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CopyComplete
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.Manifest.cache
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.xml
+D:\Disk E\Projects\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.exe
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.deps.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.runtimeconfig.dev.json
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\PMS.DataAccess.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.AssemblyReference.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfoInputs.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.AssemblyInfo.cs
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CoreCompileInputs.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.MvcApplicationPartsAssemblyInfo.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.Manifest.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\staticwebassets\PMS.StaticWebAssets.xml
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\scopedcss\bundle\PMS.styles.css
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.RazorTargetAssemblyInfo.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\Volume B\Projects\Frontend\PMS\Backend\src\PMS\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll

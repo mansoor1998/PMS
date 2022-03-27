@@ -1,0 +1,73 @@
+<div class="card w-100 shadow" [@routerTransition]>
+    <div class="card-body">
+        <div class="head">
+            <div class="input-group input-group-sm mb-3 d-flex align-items-center">
+                <input [(ngModel)]="search" type="text" class="form-control m-1" placeholder="Search...">
+                <button (click)="refresh(true)" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="table-content">
+                <div class="table-responsive table-wrapper table-scrollbar">
+                  <table [busy]="busy" class="PMS-table table">
+                    <thead>
+                      <tr>
+                        <th class="col-2">Username</th>
+                        <th class="col-2">Name</th>
+                        <th class="col-2">Contact</th>
+                        <th class="col-1">Role</th>
+                        <!-- <th class="col-1">Expiry Date</th>
+                        <th class="col-1">Quantity</th>
+                        <th class="col-1">Price</th>
+                        <th class="col-1">Company</th> -->
+                        <!-- <th class="col-1"></th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of pharmacist | paginate: { id: 'pharmacist',
+                                      itemsPerPage: pageSize,
+                                      currentPage: pageNumber,
+                                      totalItems: total }">
+                        <td>{{item.username}}</td>
+                        <td>{{item.name}}</td>                        
+                        <td>
+                            {{item.contact}}
+                        </td>
+                        <td>
+                            {{item.roleName}}
+                        </td>
+                        <!-- <td>
+                            <span class="cursor-pointer user-select-none" [matMenuTriggerFor]="asd" aria-label="Example icon-button with a menu">
+                              <mat-icon>menu</mat-icon>
+                            </span>
+                            <mat-menu #asd="matMenu">
+                              <button  (click)="addOrEdit(item)" mat-menu-item>
+                                <span>Edit</span>
+                              </button>
+                              <button (click)="delete(item)" mat-menu-item>
+                                <span>Delete</span>
+                              </button>
+                            </mat-menu>
+                  
+                          </td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>      
+
+              <div class="d-flex justify-content-end">
+                <pagination-controls id="pharmacist" reponsive="true" (pageChange)="onPageChange($event)"></pagination-controls>
+              </div>
+
+
+              <div class="d-flex justify-content-end">
+                <div (click)="addOrEdit()" class="btn btn-primary p-0 m-0" style="border-radius: 50%; width: 40px; height: 40px;">
+                  <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color text-white" style="position: relative; top: 6px;" aria-hidden="true">add</mat-icon>
+                </div>    
+              </div>
+        </div>
+
+    </div>
+</div>

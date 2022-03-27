@@ -1,0 +1,104 @@
+<div class="card w-100 shadow" [@routerTransition]>
+    <div class="card-body">
+        <div class="head">
+            <div class="input-group input-group-sm mb-3 d-flex align-items-center">
+                <input [(ngModel)]="search" type="text" class="form-control m-1" placeholder="Search...">
+                <button (click)="refresh(true)" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+        <div class="body">
+            <div class="table-content">
+                <div class="table-responsive table-wrapper table-scrollbar">
+                  <table [busy]="busy" class="PMS-table table">
+                    <thead>
+                      <tr>
+                        <th class="col-2">Name</th>
+                        <th class="col-2">Batch Code</th>
+                        <ng-container *ngIf="appSession.isGranted(Roles.ADMIN)">
+                          <th class="col-1">MFGDate</th>
+                          <th class="col-1">Expiry Date</th>  
+                        </ng-container>
+                        <th class="col-1">Quantity</th>
+                        <th class="col-1">Price</th>
+                        <th class="col-1">Company</th>
+                        <td class="col-1" *ngIf="appSession.isGranted(Roles.PHARMACIST)">
+                          BUY QTY
+                        </td>
+                        <ng-container>
+                          <th class="col-1"></th>
+                        </ng-container>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of medicines | paginate: { id: 'medicine',
+                                      itemsPerPage: pageSize,
+                                      currentPage: pageNumber,
+                                      totalItems: total }; let i=index;">
+                        <td>{{item.name}}</td>                        
+                        <td>
+                            {{item.batchCode}}
+                        </td>
+                        <ng-container *ngIf="appSession.isGranted(Roles.ADMIN)">
+                          <td>
+                              {{item.mgfDate}}
+                          </td>
+                          <td>
+                              {{item.expiryDate}}
+                          </td>
+                        </ng-container>
+                        <td>
+                            {{item.quantity}}
+                        </td>
+                        <td>
+                            {{item.pricePerUnit}}
+                        </td>
+                        <td>
+                            {{item.medicalCompanyName}}
+                        </td>
+                        <td *ngIf="appSession.isGranted(Roles.PHARMACIST)">
+                          <div class="input-group">
+                            <input #qty type="number" class="form-control" min="0" value="0">
+                          </div>
+                        </td>
+                        <ng-container *ngIf="appSession.isGranted(Roles.ADMIN); else cart">
+                          <td>
+                            <span class="cursor-pointer user-select-none" [matMenuTriggerFor]="asd" aria-label="Example icon-button with a menu">
+                              <mat-icon>menu</mat-icon>
+                            </span>
+                            <mat-menu #asd="matMenu">
+                              <button  (click)="addOrEdit(item)" mat-menu-item>
+                                <span>Edit</span>
+                              </button>
+                              <button (click)="delete(item)" mat-menu-item>
+                                <span>Delete</span>
+                              </button>
+                            </mat-menu>
+                  
+                          </td>
+                        </ng-container>
+                        <ng-template #cart>
+                          <button (click)="addToCart(i)" class="btn btn-primary mt-2">Add To Cart</button>
+                        </ng-template>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>      
+
+              <div class="d-flex justify-content-end">
+                <pagination-controls id="medicine" reponsive="true" (pageChange)="onPageChange($event)"></pagination-controls>
+              </div>
+
+              <ng-container *ngIf="appSession.isGranted(Roles.ADMIN)">
+                <div class="d-flex justify-content-end">
+                  <div (click)="addOrEdit()" class="btn btn-primary p-0 m-0" style="border-radius: 50%; width: 40px; height: 40px;">
+                    <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color text-white" style="position: relative; top: 6px;" aria-hidden="true">add</mat-icon>
+                  </div>    
+                </div>
+              </ng-container>
+
+        </div>
+
+    </div>
+</div>

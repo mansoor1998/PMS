@@ -1,0 +1,42 @@
+<div class="card w-100 shadow" [@routerTransition]>
+    <div class="card-body">
+        <div class="head">
+            <div class="input-group input-group-sm mb-3 d-flex align-items-center">
+                <input [(ngModel)]="search" type="text" class="form-control m-1" placeholder="Search...">
+                <button (click)="searchOrder()" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+
+        <div class="body">
+            <p>Invoice # {{order?.orderNumber}}</p>
+            <p>Customer Name: {{order?.customerName}}</p>
+
+            <table [busy]="busy" class="PMS-table table">
+                <thead>
+                  <tr>
+                    <th class="col-3">Name</th>
+                    <th class="col-3">Quantity</th>
+                    <th class="col-3">Batch Code</th>
+                    <th class="col-3">PricePerUnit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of order?.orderItems let i=index;">
+                    <td>{{item?.medicineName}}</td>                        
+                    <td>
+                        {{item?.quantity}}
+                    </td>
+                    <td>
+                        {{item?.batchCode}}
+                    </td>
+                    <td>
+                        {{item?.pricePerUnit}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>

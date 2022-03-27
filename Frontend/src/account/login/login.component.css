@@ -1,0 +1,27 @@
+.login-wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 700px;
+  padding: 33px 110px;
+  margin: auto;
+}
+
+.heading {
+  margin: 40px 0;
+}
+
+.login-content form {
+  margin-bottom: 40px;
+}
+
+.login-content div {
+  margin: 20px 0;
+}
+
+.login-content div p {
+  text-align: center;
+}
+
+.heading h2 {
+  text-align: center;
+}
