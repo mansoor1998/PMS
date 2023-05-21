@@ -20,7 +20,7 @@ export class GetOrderDto {
 
 export class GetOrderItemDto {
     public  medicineName: string;
-    public  quantity: string;
+    public  quantity: number;
     public  batchCode: string;
     public  pricePerUnit: number;
 }

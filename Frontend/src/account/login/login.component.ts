@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {UserService} from '../../shared/services/users/user.service';
+import {IUserService, UserService} from '../../shared/services/users/user.service';
 import {Framework} from '../../shared/framework';
 import { AuthDto } from 'src/shared/services/users/user.dto';
 
@@ -11,19 +11,20 @@ import { AuthDto } from 'src/shared/services/users/user.dto';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  //@Inject('IOrderService') private orderService: IOrderService
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, public router: Router, private userService: UserService, private framework: Framework) { }
+  constructor(private fb: FormBuilder, public router: Router, 
+    @Inject('IUserService') private userService: IUserService, private framework: Framework) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', [
+      username: ['demouser', [
         Validators.required,
         Validators.pattern('[A-Za-z0-9]{5,}')
       ]],
-      password: ['', [
+      password: ['password123', [
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(4)
       ]]
     });
   }

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { AppSession, Framework } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
 import { CreateUserDto, GetUserDto } from 'src/shared/services/users/user.dto';
-import { UserService } from 'src/shared/services/users/user.service';
+import { IUserService, UserService } from 'src/shared/services/users/user.service';
 import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.component';
 
 @Component({
@@ -18,14 +18,14 @@ export class PharmacistComponent extends PageListingComponentBase<GetUserDto> im
   public pharmacist: GetUserDto[] = [];
   session: AppSession;
 
-  constructor(private userService: UserService, private dialog: MatDialog, private framework: Framework) {
+  constructor(@Inject('IUserService') private userService: IUserService, private dialog: MatDialog, private framework: Framework) {
     super();
     this.session = this.framework.session;
   }
 
   ngOnInit(): void {
     this.busy = true;
-    this.userService.getAll().subscribe((data) => {
+    this.userService.getAll(0, 10, '').subscribe((data) => {
       console.log(data);
       this.pharmacist = data.arrayList;
       this.total = data.total;
@@ -54,7 +54,7 @@ export class PharmacistComponent extends PageListingComponentBase<GetUserDto> im
     if(this.busy) return;
     this.pageNumber = page;
     this.busy = true;
-    this.userService.getAll((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((item) => {
+    this.userService.getAll((this.pageNumber - 1) * this.pageSize, this.pageSize, this.search).subscribe((item) => {
       this.total = item.total;
       this.pharmacist = item.arrayList;
 

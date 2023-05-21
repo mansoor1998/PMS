@@ -1,7 +1,7 @@
 import {Component, ComponentFactoryResolver, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {SideBar} from '../shared/sidebar';
 import {PopupDialogComponent} from '../shared/components/error-dialog/popup-dialog.component';
-import { Framework } from '../shared/framework';
+import { Framework, mockData } from '../shared/framework';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.framework.preLoader.remove();
+    //@ts-ignore
+    console.log(mockData);
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {appModuleAnimation} from '../../shared/animations/routerTransition';
 import {AppSession, Framework} from '../../shared/framework';
-import { OrderService } from 'src/shared/services/order/order.service';
+import { IOrderService, OrderService } from 'src/shared/services/order/order.service';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   public session: AppSession;
   
   
-  constructor(framework: Framework, private orderService: OrderService) {
+  constructor(framework: Framework, @Inject('IOrderService') private orderService: IOrderService) {
     this.session = framework.session;
   }
 
@@ -41,17 +41,17 @@ export class HomeComponent implements OnInit {
 
   renderChart(data: { count: number, created: Date}[]) {
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
-    new Chart(ctx.getContext('2d'), {
-      type: 'line',
-      data: {
-        labels: data.map(x => new Date(x.created).toLocaleDateString()),
-        datasets: [{
-            label: 'Sales Report',
-            data: data.map(x => x.count),
-            borderWidth: 5
-        }]
-      }
-    });
+    // new Chart(ctx.getContext('2d'), {
+    //   type: 'line',
+    //   data: {
+    //     labels: data?.map(x => new Date(x.created).toLocaleDateString()),
+    //     datasets: [{
+    //         label: 'Sales Report',
+    //         data: data.map(x => x.count),
+    //         borderWidth: 5
+    //     }]
+    //   }
+    // });
   }
 
 }

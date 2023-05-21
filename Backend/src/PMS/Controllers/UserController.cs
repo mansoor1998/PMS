@@ -34,7 +34,7 @@ namespace PMS.Controllers
         [HttpPost("authenticate")]
         public TokenDto Authenticate(AuthDto auth)
         {
-            string hashPass = generateHash(auth.Password);
+            string hashPass = GenerateHash(auth.Password);
             User user = _repository.getByUsernamePassowrd(auth.Username, hashPass);
 
             if (user == null)
@@ -67,12 +67,13 @@ namespace PMS.Controllers
 
         }
 
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         [HttpPost]
         public bool CreateUser(CreateUserDto user)
         {
 
-            string hashString = this.generateHash(user.Password);
+            string hashString = this.GenerateHash(user.Password);
             var entity = new User();
             Utility.Copier<CreateUserDto, User>.Copy(user, entity);
             entity.Password = hashString;
@@ -162,9 +163,9 @@ namespace PMS.Controllers
                 userId = Int64.Parse(identity);
                 user = _repository.GetById(userId);
 
-                if(user.Password == this.generateHash(changePassword.PreviousPassword))
+                if(user.Password == this.GenerateHash(changePassword.PreviousPassword))
                 {
-                    string hashString = this.generateHash(changePassword.NewPassword);
+                    string hashString = this.GenerateHash(changePassword.NewPassword);
                     user.Password = hashString;
                     try
                     {
@@ -189,7 +190,7 @@ namespace PMS.Controllers
             return result.Select(x => x.Name).ToArray();
         }
 
-        public string generateHash(string text)
+        private string GenerateHash(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
             SHA256Managed hashstring = new SHA256Managed();

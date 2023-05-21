@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddCompanyComponent } from 'src/app/company/add-company/add-company.component';
 import { CreateCompanyDto } from 'src/shared/services/company/company.dto';
-import { CompanyService } from 'src/shared/services/company/company.service';
+import { CompanyService, ICompanyService } from 'src/shared/services/company/company.service';
 import { CreateMedicineDto } from 'src/shared/services/medicine/medicine.dto';
-import { MedicineService } from 'src/shared/services/medicine/medicine.service';
+import { IMedicineService, MedicineService } from 'src/shared/services/medicine/medicine.service';
 
 @Component({
   selector: 'app-add-medicine',
@@ -21,29 +21,10 @@ export class AddMedicineComponent implements OnInit {
   constructor(private fb: FormBuilder, 
     public dialogRef: MatDialogRef<AddCompanyComponent>,  
     @Inject(MAT_DIALOG_DATA) private data: { id: number },
-    private companyService: CompanyService,
-    private medicineService: MedicineService) { }
+    @Inject('ICompanyService') private companyService: ICompanyService,
+    @Inject('IMedicineService') private medicineService: IMedicineService) { }
 
   ngOnInit(): void {
-
-    this.companyService.getall().subscribe((data: {
-      total: number,
-      arrayList: CreateCompanyDto[]
-    }) => {
-      console.log('the result of the companies.', data);
-      this.companies = data.arrayList;
-    });
-
-    if(this.data?.id){
-      this.medicineService.getById(this.data.id).subscribe((result: CreateMedicineDto) => {
-        // console.log(result);
-        this.medicine.patchValue({
-          ...result
-        });
-        // Object.assign(this.medicine.value, result);
-      });
-    }
-
 
     this.medicine = this.fb.group({
       name: [
@@ -56,6 +37,23 @@ export class AddMedicineComponent implements OnInit {
       pricePerUnit: [0.00, [Validators.required]],
       medicalCompanyId: [null , [Validators.required] ]
     });
+
+    this.companyService.getall(0, 100, '').subscribe((data: {
+      total: number,
+      arrayList: CreateCompanyDto[]
+    }) => {
+      this.companies = data.arrayList;
+    });
+
+    if(this.data?.id){
+      this.medicineService.getById(this.data.id).subscribe((result: CreateMedicineDto) => {
+        console.log(result);
+        this.medicine.patchValue({
+          ...result
+        });
+        // Object.assign(this.medicine.value, result);
+      });
+    }
   }
 
   get _name(){

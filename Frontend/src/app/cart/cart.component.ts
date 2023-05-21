@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { AppSession, Framework, Roles } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
-import { OrderService } from 'src/shared/services/order/order.service';
+import { IOrderService, OrderService } from 'src/shared/services/order/order.service';
 import { ToastrService } from 'ngx-toastr';
 import { GetCartDto } from 'src/shared/services/order/order.dto';
 import { FormControl, Validators } from '@angular/forms';
@@ -27,16 +27,20 @@ export class CartComponent extends PageListingComponentBase<GetCartDto> implemen
 
   constructor(private orderService: OrderService, 
     private dialog: MatDialog, private framework: Framework, 
-    private orderSerice: OrderService, private toastr: ToastrService,
+    @Inject('IOrderService') private orderSerice: IOrderService, private toastr: ToastrService,
     private router: Router
     ) {  
     super();
     this.appSession = this.framework.session;
   }
 
+  totalCost(medicineQuantity: number, medicinePricePerUnit: number) {
+    return (medicineQuantity * medicinePricePerUnit).toFixed(2);
+  }
+
   ngOnInit(): void {
     this.busy = true;
-    this.orderSerice.getAllCarts().subscribe((data) => {
+    this.orderSerice.getAllCarts(0, 10).subscribe((data) => {
       this.carts = data.arrayList;
       this.total = data.total;
       this.busy = false;

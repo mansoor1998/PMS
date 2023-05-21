@@ -1,0 +1,686 @@
+{
+    "companies": [
+        {
+        "id": 1,
+        "name": "ABC Pharmaceuticals",
+        "description": "Leading provider of generic and branded medicines"
+        },
+        {
+        "id": 2,
+        "name": "XYZ Healthcare",
+        "description": "Specializes in innovative medical solutions"
+        },
+        {
+        "id": 3,
+        "name": "PQR Pharmaceuticals",
+        "description": "Offers a wide range of prescription drugs"
+        },
+        {
+        "id": 4,
+        "name": "LMN Biotech",
+        "description": "Focuses on research and development of biopharmaceuticals"
+        },
+        {
+        "id": 5,
+        "name": "DEF Pharma",
+        "description": "Provides high-quality healthcare products at affordable prices"
+        },
+        {
+        "id": 6,
+        "name": "GHI Medical Supplies",
+        "description": "Supplies medical equipment and consumables to hospitals"
+        },
+        {
+        "id": 7,
+        "name": "JKL Pharmaceuticals",
+        "description": "Known for manufacturing OTC (Over-The-Counter) drugs"
+        },
+        {
+        "id": 8,
+        "name": "MNO Healthcare Solutions",
+        "description": "Offers comprehensive healthcare services and products"
+        },
+        {
+        "id": 9,
+        "name": "RST Biopharma",
+        "description": "Engaged in the production of biological drugs"
+        },
+        {
+        "id": 10,
+        "name": "UVW Pharmaceuticals",
+        "description": "Specializes in manufacturing generic versions of popular medicines"
+        }
+    ],
+    "medicines": [
+        {
+        "id": 1,
+        "name": "Medicine A",
+        "batchCode": "B123",
+        "mgfDate": "2022-01-01",
+        "expiryDate": "2023-12-31",
+        "quantity": 100,
+        "pricePerUnit": 10.99,
+        "medicalCompanyId": 1,
+        "medicalCompanyName": "ABC Pharmaceuticals"
+        },
+        {
+        "id": 2,
+        "name": "Medicine B",
+        "batchCode": "B456",
+        "mgfDate": "2022-02-01",
+        "expiryDate": "2024-01-31",
+        "quantity": 50,
+        "pricePerUnit": 19.99,
+        "medicalCompanyId": 2,
+        "medicalCompanyName": "XYZ Healthcare"
+        },
+        {
+        "id": 3,
+        "name": "Medicine C",
+        "batchCode": "B789",
+        "mgfDate": "2022-03-01",
+        "expiryDate": "2024-02-28",
+        "quantity": 75,
+        "pricePerUnit": 7.99,
+        "medicalCompanyId": 3,
+        "medicalCompanyName": "PQR Pharmaceuticals"
+        },
+        {
+        "id": 4,
+        "name": "Medicine D",
+        "batchCode": "B987",
+        "mgfDate": "2022-04-01",
+        "expiryDate": "2023-11-30",
+        "quantity": 200,
+        "pricePerUnit": 14.99,
+        "medicalCompanyId": 4,
+        "medicalCompanyName": "LMN Biotech"
+        },
+        {
+            "id": 5,
+            "name": "Medicine E",
+            "batchCode": "B246",
+            "mgfDate": "2022-05-01",
+            "expiryDate": "2023-10-31",
+            "quantity": 150,
+            "pricePerUnit": 8.99,
+            "medicalCompanyId": 5,
+            "medicalCompanyName": "DEF Pharma"
+        },
+        {
+            "id": 6,
+            "name": "Medicine F",
+            "batchCode": "B135",
+            "mgfDate": "2022-06-01",
+            "expiryDate": "2024-05-31",
+            "quantity": 80,
+            "pricePerUnit": 12.99,
+            "medicalCompanyId": 6,
+            "medicalCompanyName": "GHI Medical Supplies"
+        },
+        {
+            "id": 7,
+            "name": "Medicine G",
+            "batchCode": "B579",
+            "mgfDate": "2022-07-01",
+            "expiryDate": "2023-09-30",
+            "quantity": 120,
+            "pricePerUnit": 5.99,
+            "medicalCompanyId": 7,
+            "medicalCompanyName": "JKL Pharmaceuticals"
+        },
+        {
+            "id": 8,
+            "name": "Medicine H",
+            "batchCode": "B764",
+            "mgfDate": "2022-08-01",
+            "expiryDate": "2024-06-30",
+            "quantity": 100,
+            "pricePerUnit": 9.99,
+            "medicalCompanyId": 8,
+            "medicalCompanyName": "MNO Healthcare Solutions"
+        },
+        {
+            "id": 9,
+            "name": "Medicine I",
+            "batchCode": "B432",
+            "mgfDate": "2022-09-01",
+            "expiryDate": "2023-08-31",
+            "quantity": 60,
+            "pricePerUnit": 6.99,
+            "medicalCompanyId": 9,
+            "medicalCompanyName": "RST Biopharma"
+        },
+        {
+            "id": 10,
+            "name": "Medicine J",
+            "batchCode": "B753",
+            "mgfDate": "2022-10-01",
+            "expiryDate": "2023-07-31",
+            "quantity": 90,
+            "pricePerUnit": 11.99,
+            "medicalCompanyId": 10,
+            "medicalCompanyName": "UVW Pharmaceuticals"
+        },
+        {
+            "id": 11,
+            "name": "Medicine K",
+            "batchCode": "B624",
+            "mgfDate": "2022-11-01",
+            "expiryDate": "2024-04-30",
+            "quantity": 70,
+            "pricePerUnit": 14.99,
+            "medicalCompanyId": 1,
+            "medicalCompanyName": "ABC Pharmaceuticals"
+        }
+        
+    ],
+    "users": {
+        "all": [
+            {
+                "id": 1,
+                "name": "John Doe",
+                "username": "johndoe",
+                "contact": "1234567890",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "Jane Smith",
+                "username": "janesmith",
+                "contact": "9876543210",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 3,
+                "name": "Michael Johnson",
+                "username": "michaeljohnson",
+                "contact": "5555555555",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 4,
+                "name": "Emily Williams",
+                "username": "emilywilliams",
+                "contact": "9999999999",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 5,
+                "name": "David Brown",
+                "username": "davidbrown",
+                "contact": "1111111111",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 6,
+                "name": "Sarah Johnson",
+                "username": "sarahjohnson",
+                "contact": "7777777777",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 7,
+                "name": "Robert Davis",
+                "username": "robertdavis",
+                "contact": "8888888888",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 8,
+                "name": "Olivia Wilson",
+                "username": "oliviawilson",
+                "contact": "6666666666",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 9,
+                "name": "James Thompson",
+                "username": "jamesthompson",
+                "contact": "4444444444",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 10,
+                "name": "Sophia Martinez",
+                "username": "sophiamartinez",
+                "contact": "2222222222",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 7,
+                "name": "Robert Davis",
+                "username": "robertdavis",
+                "contact": "8888888888",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 8,
+                "name": "Olivia Wilson",
+                "username": "oliviawilson",
+                "contact": "6666666666",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 9,
+                "name": "James Thompson",
+                "username": "jamesthompson",
+                "contact": "4444444444",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 10,
+                "name": "Sophia Martinez",
+                "username": "sophiamartinez",
+                "contact": "2222222222",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 7,
+                "name": "Robert Davis",
+                "username": "robertdavis",
+                "contact": "8888888888",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 8,
+                "name": "Olivia Wilson",
+                "username": "oliviawilson",
+                "contact": "6666666666",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 9,
+                "name": "James Thompson",
+                "username": "jamesthompson",
+                "contact": "4444444444",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 10,
+                "name": "Sophia Martinez",
+                "username": "sophiamartinez",
+                "contact": "2222222222",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 7,
+                "name": "Robert Davis",
+                "username": "robertdavis",
+                "contact": "8888888888",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 8,
+                "name": "Olivia Wilson",
+                "username": "oliviawilson",
+                "contact": "6666666666",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 9,
+                "name": "James Thompson",
+                "username": "jamesthompson",
+                "contact": "4444444444",
+                "gender": true,
+                "roleId": 1,
+                "roleName": "Admin"
+            },
+            {
+                "id": 10,
+                "name": "Sophia Martinez",
+                "username": "sophiamartinez",
+                "contact": "2222222222",
+                "gender": false,
+                "roleId": 1,
+                "roleName": "Admin"
+            }
+        ],
+        "demo": {
+            "id": 11,
+            "name": "Demo",
+            "username": "demouser",
+            "contact": "789456123",
+            "gender": true,
+            "roleId": 1,
+            "roleName": "Admin"
+        }
+    },
+    "orders": {
+        "widgetsData": {
+            "medicalCompaniesCount": 10,
+            "medicinesCount": 20,
+            "orderCount": 100,
+            "monthlyOrdersCount": 0,
+            "dailyOrderCount": 20,
+            "weeklyOrderCount": 70,
+            "userCount": 15
+        },
+        "salesReport": [
+            {
+                "customerName": "string",
+                "orderNumber": "string",
+                "orderStatus": "string",
+                "username": "string",
+                "orderItems": [
+                    {
+                        "medicineName": "string",
+                        "quantity": 0,
+                        "batchCode": "string",
+                        "pricePerUnit": 0
+                    }
+                ]
+            },
+            {
+                "customerName": "John Smith",
+                "orderNumber": "ORD123456",
+                "orderStatus": "Pending",
+                "username": "johnsmith",
+                "orderItems": [
+                  {
+                    "medicineName": "Paracetamol",
+                    "quantity": 2,
+                    "batchCode": "BCH7890",
+                    "pricePerUnit": 5.99
+                  },
+                  {
+                    "medicineName": "Amoxicillin",
+                    "quantity": 1,
+                    "batchCode": "BCH4567",
+                    "pricePerUnit": 9.99
+                  }
+                ]
+              },
+              {
+                "customerName": "Emily Johnson",
+                "orderNumber": "ORD987654",
+                "orderStatus": "Shipped",
+                "username": "emilyjohnson",
+                "orderItems": [
+                  {
+                    "medicineName": "Ibuprofen",
+                    "quantity": 3,
+                    "batchCode": "BCH1234",
+                    "pricePerUnit": 7.5
+                  },
+                  {
+                    "medicineName": "Loratadine",
+                    "quantity": 2,
+                    "batchCode": "BCH5678",
+                    "pricePerUnit": 4.25
+                  }
+                ]
+              },
+              {
+                "customerName": "Michael Davis",
+                "orderNumber": "ORD456789",
+                "orderStatus": "Delivered",
+                "username": "michaeldavis",
+                "orderItems": [
+                  {
+                    "medicineName": "Omeprazole",
+                    "quantity": 1,
+                    "batchCode": "BCH9012",
+                    "pricePerUnit": 12.99
+                  },
+                  {
+                    "medicineName": "Aspirin",
+                    "quantity": 5,
+                    "batchCode": "BCH3456",
+                    "pricePerUnit": 3.49
+                  },
+                  {
+                    "medicineName": "Simvastatin",
+                    "quantity": 2,
+                    "batchCode": "BCH7890",
+                    "pricePerUnit": 8.75
+                  }
+                ]
+              },
+              {
+                "customerName": "Sophia Wilson",
+                "orderNumber": "ORD654321",
+                "orderStatus": "Pending",
+                "username": "sophiawilson",
+                "orderItems": [
+                  {
+                    "medicineName": "Acetaminophen",
+                    "quantity": 4,
+                    "batchCode": "BCH2345",
+                    "pricePerUnit": 6.99
+                  }
+                ]
+              },
+              {
+                "customerName": "Sarah Thompson",
+                "orderNumber": "ORD246810",
+                "orderStatus": "Shipped",
+                "username": "sarahthompson",
+                "orderItems": [
+                  {
+                    "medicineName": "Ciprofloxacin",
+                    "quantity": 2,
+                    "batchCode": "BCH1357",
+                    "pricePerUnit": 10.99
+                  },
+                  {
+                    "medicineName": "Metformin",
+                    "quantity": 3,
+                    "batchCode": "BCH2468",
+                    "pricePerUnit": 8.5
+                  }
+                ]
+              },
+              {
+                "customerName": "Daniel Rodriguez",
+                "orderNumber": "ORD753951",
+                "orderStatus": "Delivered",
+                "username": "danielrodriguez",
+                "orderItems": [
+                  {
+                    "medicineName": "Levothyroxine",
+                    "quantity": 1,
+                    "batchCode": "BCH3579",
+                    "pricePerUnit": 15.75
+                  },
+                  {
+                    "medicineName": "Hydrochlorothiazide",
+                    "quantity": 2,
+                    "batchCode": "BCH4682",
+                    "pricePerUnit": 7.25
+                  },
+                  {
+                    "medicineName": "Atorvastatin",
+                    "quantity": 3,
+                    "batchCode": "BCH5913",
+                    "pricePerUnit": 9.99
+                  }
+                ]
+              },
+              {
+                "customerName": "Olivia Martin",
+                "orderNumber": "ORD123987",
+                "orderStatus": "Pending",
+                "username": "oliviamartin",
+                "orderItems": [
+                  {
+                    "medicineName": "Prednisone",
+                    "quantity": 4,
+                    "batchCode": "BCH6248",
+                    "pricePerUnit": 6.5
+                  }
+                ]
+              }
+              
+              
+        ],
+        "invoices": [
+            {
+                "customerName": "string",
+                "orderNumber": "string",
+                "orderStatus": "string",
+                "username": "string",
+                "orderItems": [
+                    {
+                    "medicineName": "string",
+                    "quantity": 0,
+                    "batchCode": "string",
+                    "pricePerUnit": 0
+                    }
+                ]
+                }
+        ]
+    },
+    "carts": [
+        {
+          "id": 1,
+          "medicineId": 1,
+          "medicine": {
+            "id": 1,
+            "name": "Paracetamol",
+            "batchCode": "BCH123",
+            "mgfDate": "2023-05-15T10:30:00.000Z",
+            "expiryDate": "2024-05-15T10:30:00.000Z",
+            "quantity": 100,
+            "pricePerUnit": 5.99,
+            "medicalCompanyId": 1,
+            "medicalCompanyName": "ABC Pharmaceuticals"
+          },
+          "created": "2023-05-21T10:30:00.000Z",
+          "updated": "2023-05-21T10:30:00.000Z",
+          "medicineName": "Paracetamol",
+          "medicineQuantity": 10,
+          "medicinePricePerUnit": 5.99
+        },
+        {
+          "id": 2,
+          "medicineId": 2,
+          "medicine": {
+            "id": 2,
+            "name": "Amoxicillin",
+            "batchCode": "BCH456",
+            "mgfDate": "2023-04-20T14:45:00.000Z",
+            "expiryDate": "2024-04-20T14:45:00.000Z",
+            "quantity": 50,
+            "pricePerUnit": 9.99,
+            "medicalCompanyId": 2,
+            "medicalCompanyName": "XYZ Pharmaceuticals"
+          },
+          "created": "2023-05-21T14:45:00.000Z",
+          "updated": "2023-05-21T14:45:00.000Z",
+          "medicineName": "Amoxicillin",
+          "medicineQuantity": 5,
+          "medicinePricePerUnit": 9.99
+        },
+        {
+            "id": 3,
+            "medicineId": 3,
+            "medicine": {
+              "id": 3,
+              "name": "Ibuprofen",
+              "batchCode": "BCH789",
+              "mgfDate": "2023-05-18T08:15:00.000Z",
+              "expiryDate": "2024-05-18T08:15:00.000Z",
+              "quantity": 80,
+              "pricePerUnit": 7.5,
+              "medicalCompanyId": 3,
+              "medicalCompanyName": "XYZ Pharmaceuticals"
+            },
+            "created": "2023-05-21T08:15:00.000Z",
+            "updated": "2023-05-21T08:15:00.000Z",
+            "medicineName": "Ibuprofen",
+            "medicineQuantity": 8,
+            "medicinePricePerUnit": 7.5
+          },
+          {
+            "id": 4,
+            "medicineId": 4,
+            "medicine": {
+              "id": 4,
+              "name": "Loratadine",
+              "batchCode": "BCH101",
+              "mgfDate": "2023-05-16T11:30:00.000Z",
+              "expiryDate": "2024-05-16T11:30:00.000Z",
+              "quantity": 120,
+              "pricePerUnit": 4.99,
+              "medicalCompanyId": 4,
+              "medicalCompanyName": "ABC Pharmaceuticals"
+            },
+            "created": "2023-05-21T11:30:00.000Z",
+            "updated": "2023-05-21T11:30:00.000Z",
+            "medicineName": "Loratadine",
+            "medicineQuantity": 12,
+            "medicinePricePerUnit": 4.99
+          },
+          {
+            "id": 5,
+            "medicineId": 5,
+            "medicine": {
+              "id": 5,
+              "name": "Aspirin",
+              "batchCode": "BCH202",
+              "mgfDate": "2023-05-20T13:45:00.000Z",
+              "expiryDate": "2024-05-20T13:45:00.000Z",
+              "quantity": 200,
+              "pricePerUnit": 3.25,
+              "medicalCompanyId": 5,
+              "medicalCompanyName": "ABC Pharmaceuticals"
+            },
+            "created": "2023-05-21T13:45:00.000Z",
+            "updated": "2023-05-21T13:45:00.000Z",
+            "medicineName": "Aspirin",
+            "medicineQuantity": 20,
+            "medicinePricePerUnit": 3.25
+          }
+    ],
+    "userConfiguration": {
+        "userId": 11,
+        "username": "demouser",
+        "name": "Demo",
+        "roleName": "Admin",
+        "allRoles": [
+          "Admin"
+        ],
+        "isLogged": false
+    }
+}

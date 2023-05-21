@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateUserDto } from 'src/shared/services/users/user.dto';
-import { UserService } from 'src/shared/services/users/user.service';
+import { IUserService, UserService } from 'src/shared/services/users/user.service';
 
 @Component({
   selector: 'app-add-pharmacist',
@@ -17,7 +17,7 @@ export class AddPharmacistComponent implements OnInit {
   constructor(private fb: FormBuilder, 
     public dialogRef: MatDialogRef<AddPharmacistComponent>,  
     @Inject(MAT_DIALOG_DATA) private data: { id: number },
-    private userService: UserService) { }
+    @Inject('IUserService') private userService: IUserService) { }
 
   ngOnInit(): void {
     // this.userService.getAllRoles().subscribe((data: string[]) => {

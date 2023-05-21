@@ -5,6 +5,7 @@ import {AccountRoutingModule} from './account-routing.module';
 import {ShareModule} from '../shared/share.module';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { UserServiceMock } from 'src/shared/services/users/user.service';
 
 
 
@@ -15,6 +16,9 @@ import {ReactiveFormsModule} from '@angular/forms';
         AccountRoutingModule,
         ShareModule,
         ReactiveFormsModule
+    ],
+    providers: [
+      { provide: 'IUserService', useClass: UserServiceMock }, 
     ]
 })
 export class AccountModule { }

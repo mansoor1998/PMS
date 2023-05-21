@@ -23,6 +23,7 @@ export class AppSessionDto{
     public  name: string;
     public  roleName: string;
     public  allRoles: string[];
+    public  isLogged?: boolean;
 }
   
 export class AuthDto{

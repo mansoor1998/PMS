@@ -18,9 +18,9 @@ namespace PMS.Repository.UserRepo
 
         public override long Create(User entity)
         {
-            entity.Created = DateTime.Now;
+            entity.Created = DateTime.Now;  
             entity.Updated = DateTime.Now;
-            long roleId = _context.Roles.Where(x => x.Name == "Pharmacist").Select(x=>x.Id).FirstOrDefault();
+            long roleId = _context.Roles.Where(x => x.Name == "Admin").Select(x=>x.Id).FirstOrDefault();
             entity.RoleId = roleId;
             _context.Users.Add(entity);
             _context.SaveChanges();

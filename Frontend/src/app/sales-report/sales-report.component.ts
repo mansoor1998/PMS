@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { AppSession, Framework } from 'src/shared/framework';
 import { GetOrderDto } from 'src/shared/services/order/order.dto';
-import { OrderService } from 'src/shared/services/order/order.service';
+import { IOrderService, OrderService } from 'src/shared/services/order/order.service';
 
 @Component({
   selector: 'app-sales-report',
@@ -21,7 +21,7 @@ export class SalesReportComponent implements OnInit {
 
   public session:AppSession;
 
-  constructor(private fb: FormBuilder, private orderService: OrderService, framwork: Framework) {
+  constructor(private fb: FormBuilder, @Inject('IOrderService') private orderService: IOrderService, framwork: Framework) {
     this.session = framwork.session;
   }
 

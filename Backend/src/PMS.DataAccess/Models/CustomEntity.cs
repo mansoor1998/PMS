@@ -10,8 +10,11 @@ namespace PMS.DataAccess.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+        
         public DateTime Created { get; set; }
+        
         public DateTime Updated { get; set; }
+
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
     }

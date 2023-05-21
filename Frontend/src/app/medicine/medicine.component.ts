@@ -1,12 +1,12 @@
-import { ChangeDetectorRef, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { timeStamp } from 'console';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { AppSession, Framework, Roles } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
 import { CreateMedicineDto } from 'src/shared/services/medicine/medicine.dto';
-import { MedicineService } from 'src/shared/services/medicine/medicine.service';
-import { OrderService } from 'src/shared/services/order/order.service';
+import { IMedicineService, MedicineService } from 'src/shared/services/medicine/medicine.service';
+import { IOrderService, OrderService } from 'src/shared/services/order/order.service';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { ToastrService } from 'ngx-toastr';
 
@@ -23,9 +23,9 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
   public appSession: AppSession;
   @ViewChildren('qty') quantities!: QueryList<any>;
 
-  constructor(private medicineService: MedicineService, 
+  constructor(@Inject('IMedicineService') private medicineService: IMedicineService, 
     private dialog: MatDialog, private framework: Framework, 
-    private orderSerice: OrderService, private toastr: ToastrService,
+    @Inject('IOrderService') private orderSerice: IOrderService, private toastr: ToastrService,
     private ref: ChangeDetectorRef
     ) {  
     super();
@@ -34,11 +34,10 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
 
   ngOnInit(): void {
     this.busy = true;
-    this.medicineService.getall().subscribe((data: {
+    this.medicineService.getall(0, 10, '').subscribe((data: {
       total: number,
       arrayList: CreateMedicineDto[]
     }) => {
-      console.log (data);
       this.medicines = data.arrayList;
       this.total = data.total;
       this.busy = false;
@@ -64,7 +63,7 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
     if(this.busy) return;
     this.pageNumber = page;
     this.busy = true;
-    this.medicineService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((item) => {
+    this.medicineService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize, '').subscribe((item) => {
       this.total = item.total;
       this.medicines = item.arrayList;
 
@@ -104,7 +103,7 @@ export class MedicineComponent extends PageListingComponentBase<CreateMedicineDt
     const quantity = parseInt(this.quantities.toArray()[index].nativeElement.value);
     if(quantity > 0){
       this.orderSerice.addToCart({ medicineId: id, quantity: quantity }).subscribe((result: CreateMedicineDto) => {
-        if(result) { this.medicines[index].qunatity = result.qunatity; this.refresh(); }
+        if(result) { this.medicines[index].quantity = result.quantity; this.refresh(); }
         this.quantities.toArray()[index].nativeElement.value = '0';
         this.toastr.success('added to the cart');
       });
