@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PMS.DataAccess.Models;
+using System;
 
 namespace PMS.DataAccess.DataAccess
 {
@@ -7,7 +8,7 @@ namespace PMS.DataAccess.DataAccess
     {
 
         public PMSContext(DbContextOptions options) : base(options) {
-            
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

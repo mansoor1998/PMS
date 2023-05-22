@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { GetOrderDto } from 'src/shared/services/order/order.dto';
-import { OrderService } from 'src/shared/services/order/order.service';
+import { IOrderService, OrderService } from 'src/shared/services/order/order.service';
 
 @Component({
   selector: 'app-invoice-search',
@@ -17,7 +17,7 @@ export class InvoiceSearchComponent implements OnInit {
 
   public busy = false;
 
-  constructor(private orderService: OrderService, private route: ActivatedRoute, private router: Router) { }
+  constructor(@Inject('IOrderService') private orderService: IOrderService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((data) => {

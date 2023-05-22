@@ -8,13 +8,14 @@ using PMS.DataAccess.DataAccess;
 using PMS.Repository.MedicalCompanyRepo;
 using PMS.Repository.MedicineRepo;
 using PMS.Repository.UserRepo;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using PMS.Repository.OrderRepo;
 using PMS.Repository.CartRepo;
 using PMS.Repository;
 using PMS.Repository.CustomRepo;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace PMS
 {
@@ -76,6 +77,12 @@ namespace PMS
             services.AddScoped(typeof( IRepository<> ), typeof (CustomRepository<>));
             //services.AddScoped<TestAbstract, Test>(); 
 
+            services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "<title>", Version = "v1" });
+            });
+
             // enable routing API
             services.AddControllers();
             
@@ -87,6 +94,12 @@ namespace PMS
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                // Configure():
+                app.UseSwagger();
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "<title> v1");
+                    c.RoutePrefix = string.Empty;
+                });
             }
 
             app.UseCors("MyPolicy");

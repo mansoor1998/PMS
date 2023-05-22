@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateCompanyDto } from 'src/shared/services/company/company.dto';
-import { CompanyService } from 'src/shared/services/company/company.service';
+import { CompanyService, ICompanyService } from 'src/shared/services/company/company.service';
 import { CompanyComponent } from '../company.component';
 
 @Component({
@@ -15,7 +15,7 @@ export class AddCompanyComponent implements OnInit {
   public company: FormGroup;
 
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<AddCompanyComponent>,  
-    private companyService: CompanyService,
+    @Inject('ICompanyService') private companyService: ICompanyService,
     @Inject(MAT_DIALOG_DATA) private data: { id: number }) { }
 
   ngOnInit(): void {
@@ -26,8 +26,6 @@ export class AddCompanyComponent implements OnInit {
       ]],
       description: ['']
     });
-
-    console.log(this.data); 
 
     if(this.data?.id){
       this.companyService.getById(this.data.id).subscribe((result: CreateCompanyDto) => {
@@ -69,7 +67,7 @@ export class AddCompanyComponent implements OnInit {
         this.dialogRef.close('ADD');
       });
 
-      this.dialogRef.close();
+      // this.dialogRef.close();
       return;
     }
 

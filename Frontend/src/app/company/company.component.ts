@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { resourceUsage } from 'process';
 import { appModuleAnimation } from 'src/shared/animations/routerTransition';
 import { Framework } from 'src/shared/framework';
 import { PageListingComponentBase } from 'src/shared/page-listing-component-base';
 import { CreateCompanyDto } from 'src/shared/services/company/company.dto';
-import { CompanyService } from 'src/shared/services/company/company.service';
+import { CompanyService, ICompanyService } from 'src/shared/services/company/company.service';
 import { AddCompanyComponent } from './add-company/add-company.component';
 
 @Component({
@@ -16,32 +16,20 @@ import { AddCompanyComponent } from './add-company/add-company.component';
 })
 export class CompanyComponent extends PageListingComponentBase<CreateCompanyDto> implements OnInit {
   
-
-  
-  
-
   public companies: Array<CreateCompanyDto> = [ 
-    // {
-    //   id: 123,
-    //   name: 'Paracetamol',
-    //   description: 'used for random purposes'
-    // }
+
   ];
 
-  // public pageSize = 10;
-  // public pageNumber = 1;
-  // public length = this.companies.length;
 
-  constructor(private dialog: MatDialog, public framework: Framework, private companyService: CompanyService) {
+  constructor(private dialog: MatDialog, public framework: Framework, 
+    @Inject('ICompanyService') private companyService: ICompanyService) {
     super(); 
     this.totalItems = this.companies.length;
-    // console.log('the name of the person'); 
-    // super(companies); 
   }
 
   ngOnInit(): void {
     this.busy = true;
-    this.companyService.getall().subscribe((data: {
+    this.companyService.getall(0, 10, '').subscribe((data: {
       total: number,
       arrayList: CreateCompanyDto[]
   }) => {
@@ -59,7 +47,6 @@ export class CompanyComponent extends PageListingComponentBase<CreateCompanyDto>
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('closed');
       if(result == 'ADD')
         this.refresh();
     });
@@ -69,7 +56,7 @@ export class CompanyComponent extends PageListingComponentBase<CreateCompanyDto>
     if(this.busy) return;
     this.pageNumber = page;
     this.busy = true;
-    this.companyService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((item) => {
+    this.companyService.getall((this.pageNumber - 1) * this.pageSize, this.pageSize, this.search).subscribe((item) => {
       this.total = item.total;
       this.companies = item.arrayList;
 

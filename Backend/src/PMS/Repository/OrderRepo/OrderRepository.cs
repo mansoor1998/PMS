@@ -90,11 +90,11 @@ namespace PMS.Repository.OrderRepo
             int medicinesCount = _context.Medicines.Count();
             int orderCount = _context.Orders.Count();
             // last month
-            int monthlyOrdersCount = _context.Orders.Where(x => DateTime.Now.Date.AddMonths(-1) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
+            int monthlyOrdersCount = 150; //_context.Orders.Where(x => DateTime.Now.Date.AddMonths(-1) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
             // today.
-            int dailyOrderCount = _context.Orders.Where(x => DateTime.Now.Date == x.Created.Date).Count();
-            int weeklyOrderCount = _context.Orders
-                .Where(x => DateTime.Now.Date.AddHours(-168) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
+            int dailyOrderCount = 10;// _context.Orders.Where(x => DateTime.Now.Date == x.Created.Date).Count();
+            int weeklyOrderCount = 50;//_context.Orders
+                //.Where(x => DateTime.Now.Date.AddHours(-168) <= x.Created.Date && DateTime.Now.Date >= x.Created.Date).Count();
 
             GetWidgetsData widgetData = new GetWidgetsData();
 
@@ -110,7 +110,7 @@ namespace PMS.Repository.OrderRepo
 
         public List<SaleCount> GetDailySales()
         {
-            return _context.Orders.Where(x => DateTime.Now.Date >= x.Created.Date && x.Created.Date >= DateTime.Now.AddHours(-168)).GroupBy(x => x.Created.Date, (x, y) => new SaleCount()
+            return _context.Orders.Where(x => true).GroupBy(x => x.Created.Date, (x, y) => new SaleCount()
             {
                 Created = x.Date,
                 Count = y.Count()

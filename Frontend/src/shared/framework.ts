@@ -244,7 +244,11 @@ export class AppSession {
 
 export class Roles {
   public static PHARMACIST: string = 'Pharmacist';
-  public static ADMIN: string = 'ADMIN';
+  public static ADMIN: string = 'Admin';
 }
 
+
+export const mockData = {
+  data: null
+};
 

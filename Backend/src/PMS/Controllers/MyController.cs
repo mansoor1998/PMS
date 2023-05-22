@@ -12,10 +12,11 @@ namespace PMS.Controllers
 {
     [Route("api/db")]
     [ApiController]
-    public class MyController : AsyncCrudAppController<Medicine, GetMedicineDto, CreateMedicineDto>
+    public class MyController : GetCrudAppController<Medicine, GetMedicineDto>//AsyncCrudAppController<Medicine, GetMedicineDto, CreateMedicineDto>
     {
         public MyController(IRepository<Medicine> repository) : base(repository)
         {}
 
     }
+
 }

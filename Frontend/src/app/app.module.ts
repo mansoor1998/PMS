@@ -32,6 +32,10 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { ToastrModule } from 'ngx-toastr';
 import { CartComponent } from './cart/cart.component';
 import {Chart, registerables} from 'chart.js';
+import { UserService, UserServiceMock } from 'src/shared/services/users/user.service';
+import { OrderService, OrderServiceMock } from 'src/shared/services/order/order.service';
+import { MedicineService, MedicineServiceMock } from 'src/shared/services/medicine/medicine.service';
+import { CompanyService, CompanyServiceMock } from 'src/shared/services/company/company.service';
 
 
 
@@ -69,7 +73,12 @@ import {Chart, registerables} from 'chart.js';
     FormsModule,
     ClipboardModule
   ],
-  providers: []
+  providers: [
+    { provide: 'IUserService', useClass: UserServiceMock }, 
+    { provide: 'IOrderService', useClass: OrderServiceMock }, 
+    { provide: 'IMedicineService', useClass: MedicineServiceMock },
+    { provide: 'ICompanyService', useClass: CompanyServiceMock }
+  ]
 })
 export class AppModule {
   constructor() {

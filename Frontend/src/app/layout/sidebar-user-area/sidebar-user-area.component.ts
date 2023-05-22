@@ -21,8 +21,11 @@ export class SidebarUserAreaComponent implements OnInit {
   }
 
   logout(event: MouseEvent): void {
+    try{
+      localStorage.removeItem('isLogged');
+    }catch(e){}
     this.framework.session.removeToken('auth-token');
-    console.log('this is cookie logout');
+    // console.log('this is cookie logout');
     window.location.replace ('/account/login');
   }
 }

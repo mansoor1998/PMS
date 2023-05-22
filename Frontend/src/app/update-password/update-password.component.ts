@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Framework } from 'src/shared/framework';
 import { ChangePassword } from 'src/shared/services/users/user.dto';
-import { UserService } from 'src/shared/services/users/user.service';
+import { IUserService, UserService } from 'src/shared/services/users/user.service';
 
 @Component({
   selector: 'app-update-password',
@@ -14,7 +14,7 @@ export class UpdatePasswordComponent implements OnInit {
 
   public changePassword: FormGroup;
 
-  constructor(private fb: FormBuilder, private framework: Framework, private userService: UserService, private route:Router) { }
+  constructor(private fb: FormBuilder, private framework: Framework, @Inject('IUserService') private userService: IUserService, private route:Router) { }
 
   ngOnInit(): void {
     this.changePassword = this.fb.group({

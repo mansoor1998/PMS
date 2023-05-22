@@ -1,4 +1,5 @@
 {
   "remoteServiceBaseUrl": "http://localhost:5000",
-  "appBaseUrl": "http://localhost:4200"
+  "appBaseUrl": "http://localhost:4200",
+  "backendEnv": "json"
 }
