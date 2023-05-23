@@ -47,7 +47,6 @@ export class AddMedicineComponent implements OnInit {
 
     if(this.data?.id){
       this.medicineService.getById(this.data.id).subscribe((result: CreateMedicineDto) => {
-        console.log(result);
         this.medicine.patchValue({
           ...result
         });

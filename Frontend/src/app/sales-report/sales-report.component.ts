@@ -44,12 +44,10 @@ export class SalesReportComponent implements OnInit {
   onSubmit() {
     this.date.markAllAsTouched();
     if(this.date.valid){
-      console.log('the date is valid');
       const date = this.date.value as {from: Date, to: Date};
       this.busy = true;
       this.orderService.getSalesReport(date).subscribe((data: GetOrderDto[]) => {
         this.reportData = data;
-        console.log(data);
         this.busy = false;
       }, (err) => this.busy = false);
     }

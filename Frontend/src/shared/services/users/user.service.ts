@@ -39,7 +39,7 @@ export class UserService implements IUserService {
   }
 
   public create(user: CreateUserDto) {
-    console.log(user);
+    // console.log(user);
     return this.http.post(this.REMOTE_BASE_URL + '/api/user', user, {headers: this.headers});
   }
 

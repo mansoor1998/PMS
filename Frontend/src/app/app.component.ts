@@ -19,7 +19,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.framework.preLoader.remove();
-    //@ts-ignore
-    console.log(mockData);
   }
 }

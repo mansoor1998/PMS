@@ -55,7 +55,7 @@ export class UpdatePasswordComponent implements OnInit {
         this.framework.message.success('Password Changed', 'Your password has been changed');
         this.route.navigate(['/app/home']);
       }, (err: Error) => {
-        console.log(err);
+        console.error(err);
         this.framework.message.error(err.message, 'Password change failed');
       })
       

@@ -26,7 +26,6 @@ export class PharmacistComponent extends PageListingComponentBase<GetUserDto> im
   ngOnInit(): void {
     this.busy = true;
     this.userService.getAll(0, 10, '').subscribe((data) => {
-      console.log(data);
       this.pharmacist = data.arrayList;
       this.total = data.total;
       this.busy = false;

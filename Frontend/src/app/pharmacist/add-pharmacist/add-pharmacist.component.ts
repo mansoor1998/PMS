@@ -68,7 +68,6 @@ export class AddPharmacistComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log('submission');
     this.user.markAllAsTouched();
 
     // console.log(this.user.value);

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
     this.orderService.getWidgetsData().subscribe(data => {
       this.widgetsData = data;
-      console.log(data);
+      // console.log(data);
     });
 
     this.orderService.getDailySales().subscribe(data => {

@@ -1,5 +1,6 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Inject} from '@angular/core';
 import {Framework} from '../../../shared/framework';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar-user-area',
@@ -12,7 +13,7 @@ export class SidebarUserAreaComponent implements OnInit {
   public username: string = '';
 
 
-  constructor(private framework: Framework) { }
+  constructor(private framework: Framework, @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
     const {Name: name, Username: username } =  this.framework.session;
@@ -25,7 +26,7 @@ export class SidebarUserAreaComponent implements OnInit {
       localStorage.removeItem('isLogged');
     }catch(e){}
     this.framework.session.removeToken('auth-token');
-    // console.log('this is cookie logout');
-    window.location.replace ('/account/login');
+    window.location.href = this.document.getElementsByTagName('base')[0].href + '/account/login'
+    // window.location.replace ('/account/login');
   }
 }

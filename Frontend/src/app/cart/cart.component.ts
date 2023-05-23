@@ -59,7 +59,7 @@ export class CartComponent extends PageListingComponentBase<GetCartDto> implemen
     this.pageNumber = page;
     this.busy = true;
     this.orderSerice.getAllCarts((this.pageNumber - 1) * this.pageSize, this.pageSize).subscribe((item) => {
-      console.log(item);
+      // console.log(item);
       this.total = item.total;
       this.carts = item.arrayList;
 
